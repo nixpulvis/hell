@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e
+
+cd evolution/
+exec cargo run --bin server "$@"

@@ -1,0 +1,23 @@
+[package]
+name = "evolution-ui"
+version = "0.1.0"
+authors = [
+    "Nathan Lilienthal <nathan@nixpulvis.com>",
+    "Steve Troetti <workstroetti@gmail.com>"
+]
+
+[dependencies]
+conrod = "*"
+piston_window = "*"
+serde = "0.6"
+
+[dependencies.serde_json]
+version = "*"
+git = "https://github.com/nixpulvis/json"
+branch = "negative-zero"
+
+[dependencies.evolution]
+path = "../"
+
+[dependencies.evolution-wire]
+path = "../evolution-wire"

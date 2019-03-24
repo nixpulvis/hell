@@ -1,0 +1,16 @@
+[
+  [
+    ["id",1],
+    ["species",[
+      [
+        ["food",2],
+        ["body",3],
+        ["population",3],
+        ["traits",["horns", "burrowing"]]
+      ]
+    ]],
+    ["bag",0]
+  ],
+  1,
+  []
+]

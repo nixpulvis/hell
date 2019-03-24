@@ -1,0 +1,19 @@
+#!/bin/bash
+set -e
+
+PROJECT_ROOT="$(realpath "$(dirname $0)")"
+RUST="$PROJECT_ROOT/localrust"
+if ! [ -d $RUST ]
+then
+    RUSTINSTALLER="$PROJECT_ROOT/rust-nightly-x86_64-unknown-linux-gnu"
+    echo RUSTINSTALLER "$RUSTINSTALLER"
+    echo RUST "$RUST"
+    wget https://static.rust-lang.org/dist/2016-02-02/rust-nightly-x86_64-unknown-linux-gnu.tar.gz -O rust.tar.gz
+    tar -zxf rust.tar.gz -C $PROJECT_ROOT
+    (cd $RUSTINSTALLER; ./install.sh --prefix="$RUST")
+    rm -rf $RUSTINSTALLER
+fi
+
+PATH="$PROJECT_ROOT/localrust/bin:$PATH"
+export PATH
+exec cargo "$@"

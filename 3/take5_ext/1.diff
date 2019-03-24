@@ -1,0 +1,13 @@
+diff --git a/2/take5/src/stack.rs b/2/take5/src/stack.rs
+index 30fd3e3..3a0c4d3 100644
+--- a/2/take5/src/stack.rs
++++ b/2/take5/src/stack.rs
+@@ -26,7 +26,7 @@ impl Stack {
+     /// assert!(stack.full());
+     /// ```
+     pub fn full(&self) -> bool {
+-        self.0.len() == 5
++        self.0.len() == 6
+     }
+ 
+     /// Returns the sum of the bull values of cards in the stack.

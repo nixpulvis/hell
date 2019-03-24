@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e
+
+cd dealer/evolution/evolution-server
+exec target/debug/xstep

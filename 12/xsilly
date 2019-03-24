@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e
+
+cd evolution/
+exec target/debug/xsilly

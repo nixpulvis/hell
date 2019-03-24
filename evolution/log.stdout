@@ -1,0 +1,349 @@
+     Running `target/debug/client b`
+     Running `target/debug/server 3`
+     Running `target/debug/client a`
+<main> DEBUG client | starting client...
+<main> DEBUG client | starting client...
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:55944<?> TRACE evolution_wire::channel | Channel(info: pending, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55944)).recv<T>
+<?> TRACE evolution_wire::channel <main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:55944), them: V4(127.0.0.1:1337)).recv<T>
+     Running `target/debug/client c`
+<main> DEBUG client | starting client...
+<main> TRACE evolution_wire::channel | Channel(info:<?> TRACE evolution_wire::channel | Channel(info: pending, us: <main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:55946), them: V4(127.0.0.1:1337)).recv<T>
+<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:55948), them: V4(127.0.0.1:1337)).recv<T>
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:55944), them: V4(127.0.0.1:1337)).recv<T>
+<main> DEBUG client | got initial start Some(Start { watering_hole: Natural(0), bag: Natural(0), domain: [Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }], hand: [SpeciesCard(FoodValue(-3), Ambush), SpeciesCard(FoodValue(-2), Ambush), SpeciesCard(FoodValue(-1), Ambush), SpeciesCard(FoodValue(0), Ambush)] })
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:55946), them: V4(127.0.0.1:1337)).recv<T>
+<main> DEBUG client | got initial start Some(Start { watering_hole: Natural(0), bag: Natural(0), domain: [Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }], hand: [SpeciesCard(FoodValue(1), Ambush), SpeciesCard(FoodValue(2), Ambush), SpeciesCard(FoodValue(3), Ambush), SpeciesCard(FoodValue(-3), Burrowing)] })
+<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:55948), them: V4(127.0.0.1:1337)).recv<T>
+<main> DEBUG client | got initial start Some(Start { watering_hole: Natural(0), bag: Natural(0), domain: [Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }], hand: [SpeciesCard(FoodValue(-2), Burrowing), SpeciesCard(FoodValue(-1), Burrowing), SpeciesCard(FoodValue(0), Burrowing), SpeciesCard(FoodValue(1), Burrowing)] })
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:55944), them: V4(127.0.0.1:1337)).recv<T>
+<main> DEBUG client | got obvs ([], [[Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }], [Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }]])
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(12<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55944)).recv<T>
+<main> TRACE evolution::game::auto::action | external_choice@Choose<ActionChoice>.choose: Ok(Some(ActionChoice { food_card: 0, population_growths: [Growth { spe<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:55946), them: V4(127.0.0.1:1337)).recv<T>
+<main> DEBUG client | got obvs ([[Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }, Species { food: Nat(0), body: Nat(0), population: NatPlus(2), traits: LOT([Ambush]), fat_food: None }]], [[Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }]])
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:55946), them: V4(127.0.0.1:1337)).send<T>
+<main> DEBUG client | send choice ActionChoice { food_card: 0, population_growths: [Growth { species_index: 1, card_index: 3 }], body_growths: [], boar<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:1<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:55948), them: V4(127.0.0.1:1337)).recv<T>
+<main> DEBUG client | got obvs ([[Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }, Species { food: Nat(0), body: Nat(0), population: NatPlus(2), traits: LOT([Ambush]), fat_food: None }], [Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }, Species { food: Nat(0), body: Nat(0), population: NatPlus(2), traits: LOT([Ambush]), fat_food: None }]], [])
+<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:55948), them: V4(127.0.0.1:1337)).send<T>
+<main> DEBUG client | send choice ActionChoice { food_card: 0, population_growths: [Growth { species_index: 1, card_index: 3 }], body_growths: [], boards: [BoardTrade { card_index: 1, trait_card_indeces: [2] }], traits: [] }
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:55944), them: V4(127.0.0.1:1337)).recv<T>
+<main> DEBUG client | got new start Start { watering_hole: Natural(0), bag: Natural(0), domain: [Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }], hand: [SpeciesCard(FoodValue(-2), Climbing), SpeciesCard(FoodValue(-1), Climbing), SpeciesCard(FoodValue(0), Climbing), SpeciesCard(FoodValue(1), Climbing), SpeciesCard(FoodValue(2), Burrowing), SpeciesCard(FoodValue(3), Burrowing), SpeciesCard(FoodValue(-8), Carnivore), SpeciesCard(FoodValue(-7), Carnivore)] }
+<main> DEBUG client | breaking feed loop
+<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:55948), them: V4(127.0.0.1:1337)).recv<T>
+<main> DEBUG client | got new start Start { watering_hole: Natural(0), bag: Natural(0), domain: [Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }], hand: [SpeciesCard(FoodValue(6), Carnivore), SpeciesCard(FoodValue(7), Carnivore), SpeciesCard(FoodValue(8), Carnivore), SpeciesCard(FoodValue(-3), Climbing), SpeciesCard(FoodValue(-2), Carnivore), SpeciesCard(FoodValue(-1), Carnivore), SpeciesCard(FoodValue(0), Carnivore), SpeciesCard(FoodValue(1), Carnivore)] }
+<main> DEBUG client | breaking feed loop
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:55946), them: V4(127.0.0.1:1337)).recv<T>
+<main> DEBUG client | got new start Start { watering_hole: Natural(0), bag: Natural(0), domain: [Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }], hand: [SpeciesCard(FoodValue(2), Carnivore), SpeciesCard(FoodValue(3), Carnivore), SpeciesCard(FoodValue(4), Carnivore), SpeciesCard(FoodValue(5), Carnivore), SpeciesCard(FoodValue(-6), Carnivore), SpeciesCard(FoodValue(-5), Carnivore), SpeciesCard(FoodValue(-4), Carnivore), SpeciesCard(FoodValue(-3), Carnivore)] }
+<main> DEBUG client | breaking feed loop
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:55946), them: V4(127.0.0.1:1337)).recv<T>
+<main> DEBUG<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55946)).recv<T>
+<main> TRACE evolution::game::auto::action | external_choice@Choose<ActionChoice>.choose: Ok(Some(ActionChoice { food_card: 4, population_growths: [Growth { species_index: 1, card_index: 7 }], body_growths: [Growth { species_index: 1, card_index: 0 }], boards: [BoardTrade { card_index: 5, trait_card_indeces: [6] }], traits: [TraitTrade { species_index: 1, trait_index: 0, replacement_index: 1 }] }))
+<main> DEBUG evolution::game::step::action | applying choice: ActionChoice { food_card: 4, population_growths: [Growth { species_index: 1, card_index: 7 }], b<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:55948), them: V4(127.0.0.1:1337)).recv<T>
+<main> DEBUG client | got obvs ([[Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }, Species { food: Nat(0), body: Nat(1), population: NatPlus(2), traits: LOT([Carnivore]), fat_food: None }]], [[Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }]])
+<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:55948), them<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55948)).recv<T>
+<main> TRACE evolution::game::auto::action | external_choice@Choose<ActionChoice>.choose: Ok(Some(ActionChoice { food_card: 4, population_growths: [Growth { species_index: 1, card_index: 7 }], body_growths: [Growth { species_index: 1, card_index: 0 }]<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:55944), them: V4(127.0.0.1:1337)).recv<T>
+<main> DEBUG client | got obvs ([[Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }, Species { food: Nat(0), body: Nat(1), population: NatPlus(2), traits: LOT([Carnivore]), fat_food: None }], [Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }, Species { food: Nat(0), body: Nat(1), population: NatPlus(2), traits: LOT([Carnivore]), fat_food: None }]], [])
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:55944), them: V4(127.0.0.1:1337)).send<T>
+<main> DEBUG client | send choice ActionChoice { food_card: 4, population_growths: [Growth { species_index: 1, card_index: 7 }], body_growths: [Growth { species_index: 1, <main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55944)).recv<T>
+<main> TRACE evolution::game::auto::action | exter<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:55944), them: V4(127.0.0.1:1337)).recv<T>
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:55946), them: V4(127.0.0.1:1337)).recv<T>
+<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:55948), them: V4(127.0.0.1:1337)).recv<T>
+<main> DEBUG client | got new start Start { watering_hole: Natural(0), bag: Natural(0), domain: [Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }], hand: [SpeciesCard(FoodValue(0), FatTissue), SpeciesCard(FoodValue(1), FatTissue), SpeciesCard(FoodValue(2), FatTissue), SpeciesCard(FoodValue(3), FatTissue), SpeciesCard(FoodValue(-1), Cooperation), SpeciesCard(FoodValue(0), Cooperation), SpeciesCard(FoodValue(1), Cooperation), SpeciesCard(FoodValue(2), Cooperation), SpeciesCard(FoodValue(0), Climbing), SpeciesCard(FoodValue(1), Climbing)] }
+<main> DEBUG client | breaking feed loop
+<main> DEBUG client | got new start Start { watering_hole: Natural(0), bag: Natural(1), domain: [Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }], hand: [SpeciesCard(FoodValue(-3), Fertile), SpeciesCard(FoodValue(-2), Fertile), SpeciesCard(FoodValue(-1), Fertile), SpeciesCard(FoodValue(0), Fertile), SpeciesCard(FoodValue(2), Climbing), SpeciesCard(FoodValue(3), Climbing), SpeciesCard(FoodValue(4), Carnivore), SpeciesCard(FoodValue(5), Carnivore)] }
+<main> DEBUG client | breaking feed loop
+<main> DEBUG client | got new start Start { watering_hole: Natural(0), bag: Natural(1), domain: [Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }], hand: [SpeciesCard(FoodValue(3), Cooperation), SpeciesCard(FoodValue(-3), FatTissue), SpeciesCard(FoodValue(-2), FatTissue), SpeciesCard(FoodValue(-1), FatTissue), SpeciesCard(FoodValue(-3), Cooperation), SpeciesCard(FoodValue(-2), Cooperation), SpeciesCard(FoodValue(8), Carnivore), SpeciesCard(FoodValue(-3), Climbing)] }
+<main> DEBUG client | breaking feed loop
+<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:55948), them: V4(127.0.0.1:1337)).recv<T>
+<main> DEBUG client | got obvs ([], [[Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }], [Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }]])
+<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:55948), them: V4(127.0.0.1:1337)).send<T>
+<main> DEBUG client | send choice ActionChoice { food_card: 6, population_growths: [Growth { species_index: 1, card_index: 5 }], body_growths: [Growth { species_index: 1, card_index: 0 }], boards: <main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55948)).recv<T>
+<main> TRACE evolution::<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:55944), them: V4(127.0.0.1:1337)).recv<T>
+<main> DEBUG client | got obvs ([[Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }, Species { food: Nat(0), body: Nat(1), population: NatPlus(2), traits: LOT([FatTissue]), fat_food: Some(Nat(0)) }]], [[Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }]])
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:55944), them: V4(127.0.0.1:1337)).send<T>
+<main> DEBUG client | send choice ActionChoice { food_card: 8, population_growths: [Growth { species_index: 1, card_index: 5 }], body_growths: [Growth { species_index: 1, card_index: 6 }], boards: [BoardTrade { card_index: 9, trait_card_indeces: [4] }], traits: [TraitTrade { species_index: 1, trait_index: 0, replacement_index: 7 }] }
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:55946), them: V4(127.0.0.1:1337)).recv<T>
+<main> DEBUG client | got obvs ([[Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }, Species { food: Nat(0), body: Nat(1), population: NatPlus(2), traits: LOT([FatTissue]), fat_food: Some(Nat(0)) }], [Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }, Species { food: Nat(0), body: Nat(1), population: NatPlus(2), traits: LOT([Cooperation]), fat_food: None }]], [])
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:55946), them: V4(127.0.0.1:1337)).send<T>
+<main> DEBUG client | send choice ActionChoice { food_card: 6, population_growths: [Growth { species_index: 1, card_index: 5 }], body_growths: [Growth { species_index: 1, card_index: 0 }], boards: [BoardTrade { card_index: 7, trait_card_indeces: [4] }], traits: [TraitTrade { species_index: 1, trait_index: 0, replacement_index: 1 }] }
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:55944), them: V4(127.0.0.1:1337)).recv<T>
+<main> DEBUG client | got state State { bag: Natural(0), domain: [Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }, Species { food: Nat(0), body: Nat(1), population: NatPlus(2), traits: LOT([Cooperation]), fat_food: None }], hand: [SpeciesCard(FoodValue(0), FatTissue), SpeciesCard(FoodValue(1), FatTissue), SpeciesCard(FoodValue(2), FatTissue), SpeciesCard(FoodValue(3), FatTissue)], watering_hole: NaturalPlus(11), opponents: [[Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }, Species { food: Nat(0), body: Nat(1), population: NatPlus(3), traits: LOT([Fertile]), fat_food: None }], [Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }, Species { food: Nat(0), body: Nat(1), population: NatPlus(2), traits: LOT([FatTissue]), fat_food: Some(Nat(1)) }]] }
+<main> DEBUG client | got obvs FeedObservation { current_player: Player { id: 1, domain: Domain([Species { population: 1, body_size: 0, traits: [], food: [], fat: [] }, Species { population: 2, body_size: 1, traits: [Cooperation], food: [], fat: [] }]), bag: [], hand: [Card(0, FatTissue), Card(1, FatTissue), Card(2, FatTissue), Card(3, FatTissue)] }, opponents: [PlayerObservation { id: 1, domain: Domain([Species { population: 1, body_size: 0, traits: [], food: [], fat: [] }, Species { population: 3, body_size: 1, traits: [Fertile], food: [], fat: [] }]), bag: 0 }, PlayerObservation { id: 1, domain: Domain([Species { population: 1, body_size: 0, traits: [], food: [], fat: [] }, Species { population: 2, body_size: 1, traits: [FatTissue], food: [], fat: [FoodToken] }]), bag: 0 }], board: BoardObservation { food: 11 } }
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:55944), them: V4(127.0.0.1:1337)).send<T>
+<main> DEBUG client | send choice Feed(1)
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:55946), them: V4(127.0.0.1:1337)).recv<T>
+<main> DEBUG client | got state State { bag: Natural(1), domain: [Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }, Species { food: Nat(0), body: Nat(1), population: NatPlus(3), traits: LOT([Fertile]), fat_food: None }], hand: [SpeciesCard(FoodValue(-1), Fertile), SpeciesCard(FoodValue(0), Fertile)], watering_hole: NaturalPlus(10), opponents: [[Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }, Species { food: Nat(0), body: Nat(1), population: NatPlus(2), traits: LOT([FatTissue]), fat_food: Some(Nat(1)) }], [Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: L<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55946)).recv<T>
+<main> TRACE evolution::game::auto::feed | external_choice@Choose<FeedChoice>.choose: Ok(Some(Feed(1)))
+<main> DEBUG evolution::game::step::feed | applying choice: Feed(1)
+<main> | Feed turn for player 3.
+<main> TRACE evolution::game::auto::feed | all_choices@Choose<FeedChoice>.choose: [Feed(0), Feed(1)]
+<main> TRACE evolution::game::auto::feed | auto_choice@Choose<FeedChoice>.choose: None
+<main> TRACE evolution::game::channel | Channel.choose<wire::remote::State>
+<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55948)).send<T>
+<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55948)).recv<T>
+<main> TRACE evolution::game::auto::feed | external_choice@Choose<FeedChoice>.choose: Ok(Some(Feed(1)))
+<main> DEBUG evolution::game::step::feed | applying choice: Feed(1)
+<main> | Feed turn for player 1.
+<main> TRACE evolution::game::auto::feed | all_choices@Choose<FeedChoice>.choose: [Feed(0), Feed(1)]
+<main> TRACE evolution::game::auto::feed | auto_choice@Choose<FeedChoice>.choose: None
+<main> TRACE evolution::game::channel | Channel.choose<wire::remote::State>
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55944)).send<T>
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55944)).recv<T>
+<main> TRACE evolution::game::auto::feed | external_choice@Choose<FeedChoice>.choose: Ok(Some(Feed(1)))
+<main> DEBUG evolution::game::step::feed | applying choice: Feed(1)
+<main> | Feed turn for player 2.
+<main> TRACE evolution::game::auto::feed | all_choices@Choose<FeedChoice>.choose: [Feed(0), Feed(1)]
+<main> TRACE evolution::game::auto::feed | auto_choice@Choose<FeedChoice>.choose: None
+<main> TRACE evolution::game::channel | Channel.choose<wire::remote::State>
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55946)).send<T>
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55946)).recv<T>
+<main> TRACE evolution::game::auto::feed | external_choice@Choose<FeedChoice>.choose: Ok(Some(Feed(1)))
+<main> DEBUG evolution::game::step::feed | applying choice: Feed(1)
+<main> | Feed turn for player 3.
+<main> TRACE evolution::game::auto::feed | all_choices@Choose<FeedChoice>.choose: [Feed(0), Feed(1)]
+<main> TRACE evolution::game::auto::feed | auto_choice@Choose<FeedChoice>.choose: None
+<main> TRACE evolution::game::channel | Channel.choose<wire::remote::State>
+<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55948)).send<T>
+<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55948)).recv<T>
+<main> TRACE evolution::game::auto::feed | external_choice@Choose<FeedChoice>.choose: Ok(Some(Feed(1)))
+<main> DEBUG evolution::game::step::feed | applying choice: Feed(1)
+<main> | Feed turn for player 1.
+<main> TRACE evolution::game::auto::feed | all_choices@Choose<FeedChoice>.choose: [Feed(0)]
+<main> TRACE evolution::game::auto::feed | auto_choice@Choose<FeedChoice>.choose: Some(Feed(0))
+<main> DEBUG evolution::game::step::feed | applying choice: Feed(0)
+<main> | Feed turn for player 2.
+<main> TRACE evolution::game::auto::feed | all_choices@Choose<FeedChoice>.choose: [Feed(0), Feed(1)]
+<main> TRACE evolution::game::auto::feed | auto_choice@Choose<FeedChoice>.choose: None
+<main> TRACE evolution::game::channel | Channel.choose<wire::remote::State>
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55946)).send<T>
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55946)).recv<T>
+<main> TRACE evolution::game::auto::feed | external_choice@Choose<FeedChoice>.choose: Ok(Some(Feed(1)))
+<main> DEBUG evolution::game::step::feed | applying choice: Feed(1)
+<main> | Feed turn for player 3.
+<main> TRACE evolution::game::auto::feed | all_choices@Choose<FeedChoice>.choose: [Feed(0)]
+<main> TRACE evolution::game::auto::feed | auto_choice@Choose<FeedChoice>.choose: Some(Feed(0))
+<main> DEBUG evolution::game::step::feed | applying choice: Feed(0)
+<main> | Feed turn for player 1.
+<main> TRACE evolution::game::auto::feed | all_choices@Choose<FeedChoice>.choose: []
+<main> | Feed turn for player 2.
+<main> TRACE evolution::game::auto::feed | all_choices@Choose<FeedChoice>.choose: [Feed(0)]
+<main> TRACE evolution::game::auto::feed | auto_choice@Choose<FeedChoice>.choose: Some(Feed(0))
+<main> DEBUG evolution::game::step::feed | applying choice: Feed(0)
+<main> | Feed turn for player 3.
+<main> TRACE evolution::game::auto::feed | all_choices@Choose<FeedChoice>.choose: []
+<main> | Feed turn for player 2.
+<main> TRACE evolution::game::auto::feed | all_choices@Choose<FeedChoice>.choose: []
+<main> | Bagging.
+<main> TRACE evolution::game::step::bag | @Bag.step
+<main> | New round the starting player is 1.
+<main> | The rotation is: [1, 2, 3]
+<main> | Dealing.
+<main> TRACE evolution::game::step::deal | @Deal.step
+<main> DEBUG evolution::game::step::deal | giving player 1 cards: 5
+<main> DEBUG evolution::game::step::deal | giving player 2 cards: 5
+<main> DEBUG evolution::game::step::deal | giving player 3 cards: 5
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55944)).send<T>
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55946)).send<T>
+<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55948)).send<T>
+<main> | Action turn for player 1.
+<main> TRACE evolution::game::auto::action | all_choices@Choose<ActionChoice>.choose: []
+<main> TRACE evolution::game::channel | Channel.choose<(wire::remote::LOB, wire::remote::LOB)>
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55944)).send<T>
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55944)).recv<T>
+<main> TRACE evolution::game::auto::action | external_choice@Choose<ActionChoice>.choose: Ok(Some(ActionChoice { food_card: 5, population_growths: [Growth { species_index: 2, card_index: 8 }], body_growths: [Growth { species_index: 2, card_index: 0 }], boards: [BoardTrade { card_index: 6, trait_card_indeces: [7] }], traits: [TraitTrade { species_index: 2, trait_index: 0, replacement_index: 1 }] }))
+<main> DEBUG evolution::game::step::action | applying choice: ActionChoice { food_card: 5, population_growths: [Growth { species_index: 2, card_index: 8 }], body_growths: [Growth { species_index: 2, card_index: 0 }], boards: [BoardTrade { card_index: 6, trait_card_indeces: [7] }], traits: [TraitTrade { species_index: 2, trait_index: 0, replacement_index: 1 }] }
+<main> | Action turn for player 2.
+<main> TRACE evolution::game::auto::action | all_choices@Choose<ActionChoice>.choose: []
+<main> TRACE evolution::game::channel | Channel.choose<(wire::remote::LOB, wire::remote::LOB)>
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55946)).send<T>
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55946)).recv<T>
+<main> TRACE evolution::game::auto::action | external_choice@Choose<ActionChoice>.choose: Ok(Some(ActionChoice { food_card: 5, population_growths: [Growth { species_index: 2, card_index: 1 }], body_growths: [Growth { species_index: 2, card_index: 2 }], boards: [BoardTrade { card_index: 6, trait_card_indeces: [0] }], traits: [TraitTrade { species_index: 2, trait_index: 0, replacement_index: 3 }] }))
+<main> DEBUG evolution::game::step::action | applying choice: ActionChoice { food_card: 5, population_growths: [Growth { species_index: 2, card_index: 1 }], body_growths: [Growth { species_index: 2, card_index: 2 }], boards: [BoardTrade { card_index: 6, trait_card_indeces: [0] }], traits: [TraitTrade { species_index: 2, trait_index: 0, replacement_index: 3 }] }
+<main> | Action turn for player 3.
+<main> TRACE evolution::game::auto::action | all_choices@Choose<ActionChoice>.choose: []
+<main> TRACE evolution::game::channel | Channel.choose<(wire::remote::LOB, wire::remote::LOB)>
+<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55948)).send<T>
+<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55948)).recv<T>
+<main> TRACE evolution::game::auto::action | external_choice@Choose<ActionChoice>.choose: Ok(Some(ActionChoice { food_card: 5, population_growths: [Growth { species_index: 2, card_index: 1 }], body_growths: [Growth { species_index: 2, card_index: 2 }], boards: [BoardTrade { card_index: 6, trait_card_indeces: [0] }], traits: [TraitTrade { species_index: 2, trait_index: 0, replacement_index: 3 }] }))
+<main> DEBUG evolution::game::step::action | applying choice: ActionChoice { food_card: 5, population_growths: [Growth { species_index: 2, card_index: 1 }], body_growths: [Growth { species_index: 2, card_index: 2 }], boards: [BoardTrade { card_index: 6, trait_card_indeces: [0] }], traits: [TraitTrade { species_index: 2, trait_index: 0, replacement_index: 3 }] }
+<main> | Revealing board.
+<main> TRACE evolution::game::step::reveal | @Reveal.step
+<main> | Food count is now 0
+<main> | Bagging.
+<main> TRACE evolution::game::step::bag | @Bag.step
+<main> | New round the starting player is 2.
+<main> | The rotation is: [2, 3, 1]
+<main> | Dealing.
+<main> TRACE evolution::game::step::deal | @Deal.step
+<main> DEBUG evolution::game::step::deal | giving player 2 a species board
+<main> DEBUG evolution::game::step::deal | giving player 1 a species board
+<main> DEBUG evolution::game::step::deal | giving player 2 cards: 4
+<main> DEBUG evolution::game::step::deal | giving player 3 cards: 4
+<main> DEBUG evolution::game::step::deal | giving player 1 cards: 4
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55946)).send<T>
+<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55948)).send<T>
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55944)).send<T>
+<main> | Action turn for player 2.
+<main> TRACE evolution::game::auto::action | all_choices@Choose<ActionChoice>.choose: []
+<main> TRACE evolution::game::channel | Channel.choose<(wire::remote::LOB, wire::remote::LOB)>
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55946)).send<T>
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55946)).recv<T>
+<main> TRACE evolution::game::auto::action | external_choice@Choose<ActionChoice>.choose: Ok(Some(ActionChoice { food_card: 10, population_growths: [Growth { species_index: 1, card_index: 6 }], body_growths: [Growth { species_index: 1, card_index: 7 }], boards: [BoardTrade { card_index: 4, trait_card_indeces: [5] }], traits: [TraitTrade { species_index: 1, trait_index: 0, replacement_index: 8 }] }))
+<main> DEBUG evolution::game::step::action | applying choice: ActionChoice { food_card: 10, population_growths: [Growth { species_index: 1, card_index: 6 }], body_growths: [Growth { species_index: 1, card_index: 7 }], boards: [BoardTrade { card_index: 4, trait_card_indeces: [5] }], traits: [TraitTrade { species_index: 1, trait_index: 0, replacement_index: 8 }] }
+<main> | Action turn for player 3.
+<main> TRACE evolution::game::auto::action | all_choices@Choose<ActionChoice>.choose: []
+<main> TRACE evolution::game::channel | Channel.choose<(wire::remote::LOB, wire::remote::LOB)>
+<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55948)).send<T>
+<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55948)).recv<T>
+<main> TRACE evolution::game::auto::action | external_choice@Choose<ActionChoice>.choose: Ok(Some(ActionChoice { food_card: 8, population_growths: [Growth { species_index: 1, card_index: 6 }], body_growths: [Growth { species_index: 1, card_index: 7 }], boards: [BoardTrade { card_index: 4, trait_card_indeces: [5] }], traits: [TraitTrade { species_index: 1, trait_index: 0, replacement_index: 0 }] }))
+<main> DEBUG evolution::game::step::action | applying choice: ActionChoice { food_card: 8, population_growths: [Growth { species_index: 1, card_index: 6 }], body_growths: [Growth { species_index: 1, card_index: 7 }], boards: [BoardTrade { card_index: 4, trait_card_indeces: [5] }], traits: [TraitTrade { species_index: 1, trait_index: 0, replacement_index: 0 }] }
+<main> | Action turn for player 1.
+<main> TRACE evolution::game::auto::action | all_choices@Choose<ActionChoice>.choose: []
+<main> TRACE evolution::game::channel | Channel.choose<(wire::remote::LOB, wire::remote::LOB)>
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55944)).send<T>
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55944)).recv<T>
+<main> TRACE evolution::game::auto::action | external_choice@Choose<ActionChoice>.choose: Ok(Some(ActionChoice { food_card: 10, population_growths: [Growth { species_index: 1, card_index: 4 }], body_growths: [Growth { species_index: 1, card_index: 5 }], boards: [BoardTrade { card_index: 11, trait_card_indeces: [12] }], traits: [TraitTrade { species_index: 1, trait_index: 0, replacement_index: 6 }] }))
+<main> DEBUG evolution::game::step::action | applying choice: ActionChoice { food_card: 10, population_growths: [Growth { species_index: 1, card_index: 4 }], body_growths: [Growth { species_index: 1, card_index: 5 }], boards: [BoardTrade { card_index: 11, trait_card_indeces: [12] }], traits: [TraitTrade { species_index: 1, trait_index: 0, replacement_index: 6 }] }
+<main> | Revealing board.
+<main> TRACE evolution::game::step::reveal | @Reveal.step
+<main> | Food count is now 6
+<main> | Feed turn for player 2.
+<main> TRACE evolution::game::auto::feed | all_choices@Choose<FeedChoice>.choose: [Feed(0), Feed(1)]
+<main> TRACE evolution::game::auto::feed | auto_choice@Choose<FeedChoice>.choose: None
+<main> TRACE evolution::game::channel | Channel.choose<wire::remote::State>
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55946)).send<T>
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55946)).recv<T>
+<main> TRACE evolution::game::auto::feed | external_choice@Choose<FeedChoice>.choose: Ok(Some(Feed(1)))
+<main> DEBUG evolution::game::step::feed | applying choice: Feed(1)
+<main> | Feed turn for player 3.
+<main> TRACE evolution::game::auto::feed | all_choices@Choose<FeedChoice>.choose: [Abstain, Store(0, 1), Feed(0), Feed(1)]
+<main> TRACE evolution::game::auto::feed | auto_choice@Choose<FeedChoice>.choose: Some(Store(0, 1))
+<main> DEBUG evolution::game::step::feed | applying choice: Store(0, 1)
+<main> | Feed turn for player 1.
+<main> TRACE evolution::game::auto::feed | all_choices@Choose<FeedChoice>.choose: [Feed(0), Feed(1)]
+<main> TRACE evolution::game::auto::feed | auto_choice@Choose<FeedChoice>.choose: None
+<main> TRACE evolution::game::channel | Channel.choose<wire::remote::State>
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55944)).send<T>
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55944)).recv<T>
+<main> TRACE evolution::game::auto::feed | external_choice@Choose<FeedChoice>.choose: Ok(Some(Feed(1)))
+<main> DEBUG evolution::game::step::feed | applying choice: Feed(1)
+<main> | Feed turn for player 2.
+<main> TRACE evolution::game::auto::feed | all_choices@Choose<FeedChoice>.choose: [Feed(0), Feed(1)]
+<main> TRACE evolution::game::auto::feed | auto_choice@Choose<FeedChoice>.choose: None
+<main> TRACE evolution::game::channel | Channel.choose<wire::remote::State>
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55946)).send<T>
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55946)).recv<T>
+<main> TRACE evolution::game::auto::feed | external_choice@Choose<FeedChoice>.choose: Ok(Some(Feed(1)))
+<main> DEBUG evolution::game::step::feed | applying choice: Feed(1)
+<main> | Feed turn for player 3.
+<main> TRACE evolution::game::auto::feed | all_choices@Choose<FeedChoice>.choose: [Feed(0), Feed(1)]
+<main> TRACE evolution::game::auto::feed | auto_choice@Choose<FeedChoice>.choose: None
+<main> TRACE evolution::game::channel | Channel.choose<wire::remote::State>
+<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55948)).send<T>
+<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55948)).recv<T>
+<main> TRACE evolution::game::auto::feed | external_choice@Choose<FeedChoice>.choose: Ok(Some(Feed(1)))
+<main> DEBUG evolution::game::step::feed | applying choice: Feed(1)
+<main> | Feed turn for player 1.
+<main> TRACE evolution::game::auto::feed | all_choices@Choose<FeedChoice>.choose: [Feed(0), Feed(1)]
+<main> TRACE evolution::game::auto::feed | auto_choice@Choose<FeedChoice>.choose: None
+<main> TRACE evolution::game::channel | Channel.choose<wire::remote::State>
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55944)).send<T>
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55944)).recv<T>
+<main> TRACE evolution::game::auto::feed | external_choice@Choose<FeedChoice>.choose: Ok(Some(Feed(1)))
+<main> DEBUG evolution::game::step::feed | applying choice: Feed(1)
+<main> | Bagging.
+<main> TRACE evolution::game::step::bag | @Bag.step
+<main> | New round the starting player is 3.
+<main> | The rotation is: [3, 1, 2]
+<main> | Dealing.
+<main> TRACE evolution::game::step::deal | @Deal.step
+<main> DEBUG evolution::game::step::deal | giving player 3 cards: 4
+<main> DEBUG evolution::game::step::deal | giving player 1 cards: 4
+<main> DEBUG evolution::game::step::deal | giving player 2 cards: 4
+<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55948)).send<T>
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55944)).send<T>
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55946)).send<T>
+<main> | Action turn for player 3.
+<main> TRACE evolution::game::auto::action | all_choices@Choose<ActionChoice>.choose: []
+<main> TRACE evolution::game::channel | Channel.choose<(wire::remote::LOB, wire::remote::LOB)>
+<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55948)).send<T>
+<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55948)).recv<T>
+<main> TRACE evolution::game::auto::action | external_choice@Choose<ActionChoice>.choose: Ok(Some(ActionChoice { food_card: 6, population_growths: [Growth { species_index: 1, card_index: 4 }], body_growths: [Growth { species_index: 1, card_index: 5 }], boards: [BoardTrade { card_index: 7, trait_card_indeces: [8] }], traits: [TraitTrade { species_index: 1, trait_index: 0, replacement_index: 0 }] }))
+<main> DEBUG evolution::game::step::action | applying choice: ActionChoice { food_card: 6, population_growths: [Growth { species_index: 1, card_index: 4 }], body_growths: [Growth { species_index: 1, card_index: 5 }], boards: [BoardTrade { card_index: 7, trait_card_indeces: [8] }], traits: [TraitTrade { species_index: 1, trait_index: 0, replacement_index: 0 }] }
+<main> | Action turn for player 1.
+<main> TRACE evolution::game::auto::action | all_choices@Choose<ActionChoice>.choose: []
+<main> TRACE evolution::game::channel | Channel.choose<(wire::remote::LOB, wire::remote::LOB)>
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55944)).send<T>
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55944)).recv<T>
+<main> TRACE evolution::game::auto::action | external_choice@Choose<ActionChoice>.choose: Ok(Some(ActionChoice { food_card: 10, population_growths: [Growth { species_index: 1, card_index: 6 }], body_growths: [Growth { species_index: 1, card_index: 7 }], boards: [BoardTrade { card_index: 11, trait_card_indeces: [12] }], traits: [TraitTrade { species_index: 1, trait_index: 0, replacement_index: 8 }] }))
+<main> DEBUG evolution::game::step::action | applying choice: ActionChoice { food_card: 10, population_growths: [Growth { species_index: 1, card_index: 6 }], body_growths: [Growth { species_index: 1, card_index: 7 }], boards: [BoardTrade { card_index: 11, trait_card_indeces: [12] }], traits: [TraitTrade { species_index: 1, trait_index: 0, replacement_index: 8 }] }
+<main> | Action turn for player 2.
+<main> TRACE evolution::game::auto::action | all_choices@Choose<ActionChoice>.choose: []
+<main> TRACE evolution::game::channel | Channel.choose<(wire::remote::LOB, wire::remote::LOB)>
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55946)).send<T>
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55946)).recv<T>
+<main> TRACE evolution::game::auto::action | external_choice@Choose<ActionChoice>.choose: Ok(Some(ActionChoice { food_card: 10, population_growths: [Growth { species_index: 1, card_index: 8 }], body_growths: [Growth { species_index: 1, card_index: 9 }], boards: [BoardTrade { card_index: 6, trait_card_indeces: [7] }], traits: [TraitTrade { species_index: 1, trait_index: 0, replacement_index: 4 }] }))
+<main> DEBUG evolution::game::step::action | applying choice: ActionChoice { food_card: 10, population_growths: [Growth { species_index: 1, card_index: 8 }], body_growths: [Growth { species_index: 1, card_index: 9 }], boards: [BoardTrade { card_index: 6, trait_card_indeces: [7] }], traits: [TraitTrade { species_index: 1, trait_index: 0, replacement_index: 4 }] }
+<main> | Revealing board.
+<main> TRACE evolution::game::step::reveal | @Reveal.step
+<main> | Food count is now 0
+<main> | Bagging.
+<main> TRACE evolution::game::step::bag | @Bag.step
+1 player id: 2 (a) score: 7
+2 player id: 3 (c) score: 7
+3 player id: 1 (b) score: 5
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55946))::drop
+<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55948))::drop
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:1337), them: V4(127.0.0.1:55944))::drop
+ 1, body_size: 1, traits: [FatTissue], food: [], fat: [] }, Species { population: 2, body_size: 1, traits: [LongNeck], food: [FoodToken], fat: [] }]), bag: 0 }, PlayerObservation { id: 1, domain: Domain([Species { population: 1, body_size: 0, traits: [], food: [], fat: [] }, Species { population: 2, body_size: 1, traits: [Herding], food: [], fat: [] }]), bag: 0 }], board: BoardObservation { food: 6 } }
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:55946), them: V4(127.0.0.1:1337)).send<T>
+<main> DEBUG client | send choice Feed(1)
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:55944), them: V4(127.0.0.1:1337)).recv<T>
+<main> DEBUG client | got state State { bag: Natural(3), domain: [Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }, Species { food: Nat(0), body: Nat(1), population: NatPlus(2), traits: LOT([Herding]), fat_food: None }], hand: [SpeciesCard(FoodValue(-2), PackHunting), SpeciesCard(FoodValue(-1), PackHunting), SpeciesCard(FoodValue(0), PackHunting), SpeciesCard(FoodValue(1), PackHunting), SpeciesCard(FoodValue(-2), Herding), SpeciesCard(FoodValue(-1), Herding), SpeciesCard(FoodValue(0), Herding)], watering_hole: NaturalPlus(4), opponents: [[Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }, Species { food: Nat(1), body: Nat(1), population: NatPlus(2), traits: LOT([Horns]), fat_food: None }], [Species { food: Nat(0), body: Nat(1), population: NatPlus(1), traits: LOT([FatTissue]), fat_food: Some(Nat(1)) }, Species { food: Nat(1), body: Nat(1), population: NatPlus(2), traits: LOT([LongNeck]), fat_food: None }]] }
+<main> DEBUG client | got obvs FeedObservation { current_player: Player { id: 1, domain: Domain([Species { population: 1, body_size: 0, traits: [], food: [], fat: [] }, Species { population: 2, body_size: 1, traits: [Herding], food: [], fat: [] }]), bag: [FoodToken, FoodToken, FoodToken], hand: [Card(-2, PackHunting), Card(-1, PackHunting), Card(0, PackHunting), Card(1, PackHunting), Card(-2, Herding), Card(-1, Herding), Card(0, Herding)] }, opponents: [PlayerObservation { id: 1, domain: Domain([Species { population: 1, body_size: 0, traits: [], food: [], fat: [] }, Species { population: 2, body_size: 1, traits: [Horns], food: [FoodToken], fat: [] }]), bag: 0 }, PlayerObservation { id: 1, domain: Domain([Species { population: 1, body_size: 1, traits: [FatTissue], food: [], fat: [FoodToken] }, Species { population: 2, body_size: 1, traits: [LongNeck], food: [FoodToken], fat: [] }]), bag: 0 }], board: BoardObservation { food: 4 } }
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:55944), them: V4(127.0.0.1:1337)).send<T>
+<main> DEBUG client | send choice Feed(1)
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:55946), them: V4(127.0.0.1:1337)).recv<T>
+<main> DEBUG client | got state State { bag: Natural(5), domain: [Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }, Species { food: Nat(1), body: Nat(1), population: NatPlus(2), traits: LOT([Horns]), fat_food: None }], hand: [SpeciesCard(FoodValue(-3), LongNeck), SpeciesCard(FoodValue(-2), LongNeck), SpeciesCard(FoodValue(-1), LongNeck), SpeciesCard(FoodValue(0), LongNeck), SpeciesCard(FoodValue(-1), Horns)], watering_hole: NaturalPlus(3), opponents: [[Species { food: Nat(0), body: Nat(1), population: NatPlus(1), traits: LOT([FatTissue]), fat_food: Some(Nat(1)) }, Species { food: Nat(1), body: Nat(1), population: NatPlus(2), traits: LOT([LongNeck]), fat_food: None }], [Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }, Species { food: Nat(1), body: Nat(1), population: NatPlus(2), traits: LOT([Herding]), fat_food: None }]] }
+<main> DEBUG client | got obvs FeedObservation { current_player: Player { id: 1, domain: Domain([Species { population: 1, body_size: 0, traits: [], food: [], fat: [] }, Species { population: 2, body_size: 1, traits: [Horns], food: [FoodToken], fat: [] }]), bag: [FoodToken, FoodToken, FoodToken, FoodToken, FoodToken], hand: [Card(-3, LongNeck), Card(-2, LongNeck), Card(-1, LongNeck), Card(0, LongNeck), Card(-1, Horns)] }, opponents: [PlayerObservation { id: 1, domain: Domain([Species { population: 1, body_size: 1, traits: [FatTissue], food: [], fat: [FoodToken] }, Species { population: 2, body_size: 1, traits: [LongNeck], food: [FoodToken], fat: [] }]), bag: 0 }, PlayerObservation { id: 1, domain: Domain([Species { population: 1, body_size: 0, traits: [], food: [], fat: [] }, Species { population: 2, body_size: 1, traits: [Herding], food: [FoodToken], fat: [] }]), bag: 0 }], board: BoardObservation { food: 3 } }
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:55946), them: V4(127.0.0.1:1337)).send<T>
+<main> DEBUG client | send choice Feed(1)
+<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:55948), them: V4(127.0.0.1:1337)).recv<T>
+<main> DEBUG client | got state State { bag: Natural(5), domain: [Species { food: Nat(0), body: Nat(1), population: NatPlus(1), traits: LOT([FatTissue]), fat_food: Some(Nat(1)) }, Species { food: Nat(1), body: Nat(1), population: NatPlus(2), traits: LOT([LongNeck]), fat_food: None }], hand: [SpeciesCard(FoodValue(2), LongNeck), SpeciesCard(FoodValue(3), LongNeck), SpeciesCard(FoodValue(-3), PackHunting)], watering_hole: NaturalPlus(2), opponents: [[Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }, Species { food: Nat(1), body: Nat(1), population: NatPlus(2), traits: LOT([Herding]), fat_food: None }], [Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }, Species { food: Nat(2), body: Nat(1), population: NatPlus(2), traits: LOT([Horns]), fat_food: None }]] }
+<main> DEBUG client | got obvs FeedObservation { current_player: Player { id: 1, domain: Domain([Species { population: 1, body_size: 1, traits: [FatTissue], food: [], fat: [FoodToken] }, Species { population: 2, body_size: 1, traits: [LongNeck], food: [FoodToken], fat: [] }]), bag: [FoodToken, FoodToken, FoodToken, FoodToken, FoodToken], hand: [Card(2, LongNeck), Card(3, LongNeck), Card(-3, PackHunting)] }, opponents: [PlayerObservation { id: 1, domain: Domain([Species { population: 1, body_size: 0, traits: [], food: [], fat: [] }, Species { population: 2, body_size: 1, traits: [Herding], food: [FoodToken], fat: [] }]), bag: 0 }, PlayerObservation { id: 1, domain: Domain([Species { population: 1, body_size: 0, traits: [], food: [], fat: [] }, Species { population: 2, body_size: 1, traits: [Horns], food: [FoodToken, FoodToken], fat: [] }]), bag: 0 }], board: BoardObservation { food: 2 } }
+<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:55948), them: V4(127.0.0.1:1337)).send<T>
+<main> DEBUG client | send choice Feed(1)
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:55944), them: V4(127.0.0.1:1337)).recv<T>
+<main> DEBUG client | got state State { bag: Natural(3), domain: [Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }, Species { food: Nat(1), body: Nat(1), population: NatPlus(2), traits: LOT([Herding]), fat_food: None }], hand: [SpeciesCard(FoodValue(-2), PackHunting), SpeciesCard(FoodValue(-1), PackHunting), SpeciesCard(FoodValue(0), PackHunting), SpeciesCard(FoodValue(1), PackHunting), SpeciesCard(FoodValue(-2), Herding), SpeciesCard(FoodValue(-1), Herding), SpeciesCard(FoodValue(0), Herding)], watering_hole: NaturalPlus(1), opponents: [[Species { food: Nat(0), body: Nat(0), population: NatPlus(1), traits: LOT([]), fat_food: None }, Species { food: Nat(2), body: Nat(1), population: NatPlus(2), traits: LOT([Horns]), fat_food: None }], [Species { food: Nat(0), body: Nat(1), population: NatPlus(1), traits: LOT([FatTissue]), fat_food: Some(Nat(1)) }, Species { food: Nat(2), body: Nat(1), population: NatPlus(2), traits: LOT([LongNeck]), fat_food: None }]] }
+<main> DEBUG client | got obvs FeedObservation { current_player: Player { id: 1, domain: Domain([Species { population: 1, body_size: 0, traits: [], food: [], fat: [] }, Species { population: 2, body_size: 1, traits: [Herding], food: [FoodToken], fat: [] }]), bag: [FoodToken, FoodToken, FoodToken], hand: [Card(-2, PackHunting), Card(-1, PackHunting), Card(0, PackHunting), Card(1, PackHunting), Card(-2, Herding), Card(-1, Herding), Card(0, Herding)] }, opponents: [PlayerObservation { id: 1, domain: Domain([Species { population: 1, body_size: 0, traits: [], food: [], fat: [] }, Species { population: 2, body_size: 1, traits: [Horns], food: [FoodToken, FoodToken], fat: [] }]), bag: 0 }, PlayerObservation { id: 1, domain: Domain([Species { population: 1, body_size: 1, traits: [FatTissue], food: [], fat: [FoodToken] }, Species { population: 2, body_size: 1, traits: [LongNeck], food: [FoodToken, FoodToken], fat: [] }]), bag: 0 }], board: BoardObservation { food: 1 } }
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:55944), them: V4(127.0.0.1:1337)).send<T>
+<main> DEBUG client | send choice Feed(1)
+<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:55948), them: V4(127.0.0.1:1337)).recv<T>
+<main> DEBUG client | got new start Start { watering_hole: Natural(0), bag: Natural(7), domain: [Species { food: Nat(0), body: Nat(1), population: NatPlus(2), traits: LOT([LongNeck]), fat_food: None }], hand: [SpeciesCard(FoodValue(1), Scavenger), SpeciesCard(FoodValue(2), Scavenger), SpeciesCard(FoodValue(3), Scavenger), SpeciesCard(FoodValue(-3), Symbiosis), SpeciesCard(FoodValue(-3), Scavenger), SpeciesCard(FoodValue(-2), Scavenger), SpeciesCard(FoodValue(2), LongNeck), SpeciesCard(FoodValue(3), LongNeck), SpeciesCard(FoodValue(-3), PackHunting)] }
+<main> DEBUG client | breaking feed loop
+<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:55948), them: V4(127.0.0.1:1337)).recv<T>
+<main> DEBUG client | got obvs ([], [[Species { food: Nat(0), body: Nat(1), population: NatPlus(2), traits: LOT([Herding]), fat_food: None }], [Species { food: Nat(0), body: Nat(1), population: NatPlus(2), traits: LOT([Horns]), fat_food: None }]])
+<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:55948), them: V4(127.0.0.1:1337)).send<T>
+<main> DEBUG client | send choice ActionChoice { food_card: 6, population_growths: [Growth { species_index: 1, card_index: 4 }], body_growths: [Growth { species_index: 1, card_index: 5 }], boards: [BoardTrade { card_index: 7, trait_card_indeces: [8] }], traits: [TraitTrade { species_index: 1, trait_index: 0, replacement_index: 0 }] }
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:55946), them: V4(127.0.0.1:1337)).recv<T>
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:55944), them: V4(127.0.0.1:1337)).recv<T>
+<main> DEBUG client | got new start Start { watering_hole: Natural(0), bag: Natural(7), domain: [Species { food: Nat(0), body: Nat(1), population: NatPlus(2), traits: LOT([Horns]), fat_food: None }], hand: [SpeciesCard(FoodValue(2), Symbiosis), SpeciesCard(FoodValue(3), Symbiosis), SpeciesCard(FoodValue(-3), WarningCall), SpeciesCard(FoodValue(-2), WarningCall), SpeciesCard(FoodValue(2), PackHunting), SpeciesCard(FoodValue(3), PackHunting), SpeciesCard(FoodValue(-3), LongNeck), SpeciesCard(FoodValue(-2), LongNeck), SpeciesCard(FoodValue(-1), LongNeck), SpeciesCard(FoodValue(0), LongNeck), SpeciesCard(FoodValue(-1), Horns)] }
+<main> DEBUG client | breaking feed loop
+<main> DEBUG client | got new start Start { watering_hole: Natural(0), bag: Natural(5), domain: [Species { food: Nat(0), body: Nat(1), population: NatPlus(2), traits: LOT([Herding]), fat_food: None }], hand: [SpeciesCard(FoodValue(-2), Symbiosis), SpeciesCard(FoodValue(-1), Symbiosis), SpeciesCard(FoodValue(0), Symbiosis), SpeciesCard(FoodValue(1), Symbiosis), SpeciesCard(FoodValue(-1), Scavenger), SpeciesCard(FoodValue(0), Scavenger), SpeciesCard(FoodValue(-2), PackHunting), SpeciesCard(FoodValue(-1), PackHunting), SpeciesCard(FoodValue(0), PackHunting), SpeciesCard(FoodValue(1), PackHunting), SpeciesCard(FoodValue(-2), Herding), SpeciesCard(FoodValue(-1), Herding), SpeciesCard(FoodValue(0), Herding)] }
+<main> DEBUG client | breaking feed loop
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:55944), them: V4(127.0.0.1:1337)).recv<T>
+<main> DEBUG client | got obvs ([[Species { food: Nat(0), body: Nat(1), population: NatPlus(2), traits: LOT([LongNeck]), fat_food: None }, Species { food: Nat(0), body: Nat(1), population: NatPlus(2), traits: LOT([Scavenger]), fat_food: None }]], [[Species { food: Nat(0), body: Nat(1), population: NatPlus(2), traits: LOT([Horns]), fat_food: None }]])
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:55944), them: V4(127.0.0.1:1337)).send<T>
+<main> DEBUG client | send choice ActionChoice { food_card: 10, population_growths: [Growth { species_index: 1, card_index: 6 }], body_growths: [Growth { species_index: 1, card_index: 7 }], boards: [BoardTrade { card_index: 11, trait_card_indeces: [12] }], traits: [TraitTrade { species_index: 1, trait_index: 0, replacement_index: 8 }] }
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:55946), them: V4(127.0.0.1:1337)).recv<T>
+<main> DEBUG client | got obvs ([[Species { food: Nat(0), body: Nat(1), population: NatPlus(2), traits: LOT([LongNeck]), fat_food: None }, Species { food: Nat(0), body: Nat(1), population: NatPlus(2), traits: LOT([Scavenger]), fat_food: None }], [Species { food: Nat(0), body: Nat(1), population: NatPlus(2), traits: LOT([Herding]), fat_food: None }, Species { food: Nat(0), body: Nat(1), population: NatPlus(2), traits: LOT([PackHunting]), fat_food: None }]], [])
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:55946), them: V4(127.0.0.1:1337)).send<T>
+<main> DEBUG client | send choice ActionChoice { food_card: 10, population_growths: [Growth { species_index: 1, card_index: 8 }], body_growths: [Growth { species_index: 1, card_index: 9 }], boards: [BoardTrade { card_index: 6, trait_card_indeces: [7] }], traits: [TraitTrade { species_index: 1, trait_index: 0, replacement_index: 4 }] }
+<main> WARN | error receiving: Connection reset by peer (os error 104)
+<main> WARN | error receiving: Connection reset by peer (os error 104)
+<main> WARN | error receiving: Connection reset by peer (os error 104)
+<main> WARN | error receiving: "EOF while parsing a value" at line 1 column 0
+<main> WARN | error receiving: "EOF while parsing a value" at line 1 column 0
+<main> WARN | error receiving: "EOF while parsing a value" at line 1 column 0
+<main> TRACE evolution_wire::channel | Channel(info: a, us: V4(127.0.0.1:55946), them: <Error { repr: Os { code: 107, message: "Transport endpoint is not connected" } }>)::drop
+<main> TRACE evolution_wire::channel | Channel(info: c, us: V4(127.0.0.1:55948), them: <Error { repr: Os { code: 107, message: "Transport endpoint is not connected" } }>)::drop
+<main> TRACE evolution_wire::channel | Channel(info: b, us: V4(127.0.0.1:55944), them: <Error { repr: Os { code: 107, message: "Transport endpoint is not connected" } }>)::drop

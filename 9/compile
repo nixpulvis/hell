@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+
+cd gui/evolution
+../cargo build
+cd evolution-ui
+../../cargo build

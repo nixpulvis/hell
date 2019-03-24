@@ -1,0 +1,161 @@
+[[package]]
+name = "advapi32-sys"
+version = "0.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "winapi 0.2.5 (registry+https://github.com/rust-lang/crates.io-index)",
+ "winapi-build 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "aster"
+version = "0.10.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "clippy"
+version = "0.0.37"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "semver 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "unicode-normalization 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "itertools"
+version = "0.4.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "libc"
+version = "0.2.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "nom"
+version = "1.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "num"
+version = "0.1.30"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "quasi"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "quasi_codegen"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "aster 0.10.1 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "quasi_macros"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "quasi_codegen 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "rand"
+version = "0.3.13"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "advapi32-sys 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "libc 0.2.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "winapi 0.2.5 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "rustc-serialize"
+version = "0.3.16"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "semver"
+version = "0.2.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "nom 1.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "serde"
+version = "0.6.11"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "num 0.1.30 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "serde_codegen"
+version = "0.6.11"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "aster 0.10.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "clippy 0.0.37 (registry+https://github.com/rust-lang/crates.io-index)",
+ "quasi 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "quasi_macros 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "serde_macros"
+version = "0.6.11"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "clippy 0.0.37 (registry+https://github.com/rust-lang/crates.io-index)",
+ "serde_codegen 0.6.11 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "take5"
+version = "0.2.0"
+dependencies = [
+ "itertools 0.4.7 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rand 0.3.13 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rustc-serialize 0.3.16 (registry+https://github.com/rust-lang/crates.io-index)",
+ "serde 0.6.11 (registry+https://github.com/rust-lang/crates.io-index)",
+ "serde_macros 0.6.11 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "unicode-normalization"
+version = "0.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "winapi"
+version = "0.2.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "winapi-build"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[metadata]
+"checksum advapi32-sys 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = "307c92332867e586720c0222ee9d890bbe8431711efed8a1b06bc5b40fc66bd7"
+"checksum aster 0.10.1 (registry+https://github.com/rust-lang/crates.io-index)" = "85c32934fef6086f2ae848f13f81e26cf743cf1097dd1d85cd47945147c60857"
+"checksum clippy 0.0.37 (registry+https://github.com/rust-lang/crates.io-index)" = "1090e516fcf55ca5db8f8569fbe4b7dfa6710e4f5029c99ee2282d7558ce6cd6"
+"checksum itertools 0.4.7 (registry+https://github.com/rust-lang/crates.io-index)" = "a97184f8c043b1e5b0a9be0537960e26200880c4e78375b914a9709953e7a945"
+"checksum libc 0.2.6 (registry+https://github.com/rust-lang/crates.io-index)" = "b608bf5e09bb38b075938d5d261682511bae283ef4549cc24fa66b1b8050de7b"
+"checksum nom 1.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "f22594a984c577316633836ae490a19bff701b7a429c3f97ed96c92959329bf0"
+"checksum num 0.1.30 (registry+https://github.com/rust-lang/crates.io-index)" = "29a08e74b98b17d5e321c2026fe554777b31904b2da0f9333b80cefc99f0b5ae"
+"checksum quasi 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = "45cb90d7913de1baf5057f1e66b5ff06dd2cbab60ad2dea0acb20c2add0be905"
+"checksum quasi_codegen 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = "8e0c58f05811432a4ccc354cbde3a005beeb902a5602cec5f372de0311836334"
+"checksum quasi_macros 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = "1940568a227ebcb31fc28998b67f7643883520562e6cdf89d6da190c2f37308f"
+"checksum rand 0.3.13 (registry+https://github.com/rust-lang/crates.io-index)" = "2416b8bbd96336311c2ff9e6fca7338cc76a57a235d7a153aee88928a06b3657"
+"checksum rustc-serialize 0.3.16 (registry+https://github.com/rust-lang/crates.io-index)" = "1a48546a64cae47d06885e9bccadb99d0547d877a94c5167fa451ea33a484456"
+"checksum semver 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)" = "e0ac33a996d907002026afcd67a097b824a17691212f41df4e9f3ce35d423ff2"
+"checksum serde 0.6.11 (registry+https://github.com/rust-lang/crates.io-index)" = "f9abb9abf8a7eee8b71f980e49341b3d5474acec3253b48b2d69c59b57d1cb1e"
+"checksum serde_codegen 0.6.11 (registry+https://github.com/rust-lang/crates.io-index)" = "a062a104a1a14938d6a5e4551e8a84b36a8fd14d7ad2bda30a19dcef7d685863"
+"checksum serde_macros 0.6.11 (registry+https://github.com/rust-lang/crates.io-index)" = "d7ab9193c7cbe96b2b09c68b5692422c8b8a6295cfc25a16b95d81d53f7d90c7"
+"checksum unicode-normalization 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = "26643a2f83bac55f1976fb716c10234485f9202dcd65cfbdf9da49867b271172"
+"checksum winapi 0.2.5 (registry+https://github.com/rust-lang/crates.io-index)" = "dc3583688b861fcd83c2823d37cf2cd2446c233dd7ba3f97884d1a7302817537"
+"checksum winapi-build 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "2d315eee3b34aca4797b2da6b13ed88266e6d612562a0c46390af8299fc699bc"

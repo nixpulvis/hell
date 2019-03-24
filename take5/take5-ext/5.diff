@@ -1,0 +1,13 @@
+diff --git a/2/take5/src/player/ai_player.rs b/2/take5/src/player/ai_player.rs
+index 89a7647..045c7bb 100644
+--- a/2/take5/src/player/ai_player.rs
++++ b/2/take5/src/player/ai_player.rs
+@@ -68,7 +68,7 @@ impl Player for AiPlayer {
+     }
+ 
+     fn play(&mut self) -> Card {
+-        self.hand.sort();
++        self.hand.sort_by(|a, b| b.cmp(a));
+         self.hand.pop().expect("player ran out of cards.")
+     }
+ 

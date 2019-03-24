@@ -1,0 +1,58 @@
+[
+  [
+    ["id",1],
+    ["species",[
+      [
+        ["food",0],
+        ["body",3],
+        ["population",3],
+        ["traits",["fat-tissue", "carnivore"]],
+        ["fat-food", 3]
+      ]
+    ]],
+    ["bag",0]
+  ],
+  1,
+  [
+    [
+      ["id",2],
+      ["species",[
+        [
+          ["food",3],
+          ["body",3],
+          ["population",3],
+          ["traits",["fat-tissue"]],
+          ["fat-food", 3]
+        ],
+        [
+          ["food",3],
+          ["body",3],
+          ["population",3],
+          ["traits",["fat-tissue", "warning-call"]],
+          ["fat-food", 3]
+        ]
+      ]],
+      ["bag",0]
+    ],
+    [
+      ["id",1231],
+      ["species",[
+        [
+          ["food",3],
+          ["body",3],
+          ["population",3],
+          ["traits",["fat-tissue"]],
+          ["fat-food", 3]
+        ],
+        [
+          ["food",3],
+          ["body",3],
+          ["population",7],
+          ["traits",["fat-tissue", "warning-call"]],
+          ["fat-food", 3]
+        ]
+      ]],
+      ["bag",0]
+    ]
+  ]
+]

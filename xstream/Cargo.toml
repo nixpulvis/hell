@@ -1,0 +1,8 @@
+[package]
+name = "xstream"
+version = "0.1.0"
+authors = ["Alex Jo <alexjo@ccs.neu.edu>"]
+
+[dependencies]
+serde_json = { version = "*", git = "https://github.com/nixpulvis/json", branch = "hacks" }
+

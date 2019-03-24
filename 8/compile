@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+
+cd dealer/evolution
+../cargo build
+cd evolution-server
+../../cargo build

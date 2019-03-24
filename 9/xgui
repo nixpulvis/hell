@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e
+
+cd gui/evolution/evolution-ui
+exec target/debug/xgui

@@ -1,0 +1,29 @@
+[package]
+name = "evolution"
+version = "0.1.0"
+authors = [
+    "Nathan Lilienthal <nathan@nixpulvis.com>",
+    "Steve Troetti <workstroetti@gmail.com>"
+]
+
+[features]
+default = ["wire"]
+
+wire = ["evolution-wire"]
+
+[dependencies]
+log = "0.3"
+rand = "0.3"
+serde = { git = "https://github.com/nixpulvis/serde.git" }
+serde_json = { git = "https://github.com/nixpulvis/json.git" }
+itertools = "*"
+
+[dependencies.evolution-logger]
+path = "./evolution-logger"
+
+[dependencies.evolution-wire]
+path = "./evolution-wire"
+optional = true
+
+[dev-dependencies.evolution-test]
+path = "./evolution-test"

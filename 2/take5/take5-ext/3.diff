@@ -1,0 +1,91 @@
+diff --git a/2/take5/src/dealer/mod.rs b/2/take5/src/dealer/mod.rs
+index 2a5dba2..12af09f 100644
+--- a/2/take5/src/dealer/mod.rs
++++ b/2/take5/src/dealer/mod.rs
+@@ -36,7 +36,7 @@ pub trait Dealer {
+     /// ```
+     fn deal(&mut self) -> Card;
+ 
+-    /// Deal out 10 cards to all given players.
++    /// Deal out `TURNS` cards to all given players.
+     ///
+     /// # Panics
+     ///
+diff --git a/2/take5/src/dealer/standard_dealer.rs b/2/take5/src/dealer/standard_dealer.rs
+index fc7c9fb..a4a0dac 100644
+--- a/2/take5/src/dealer/standard_dealer.rs
++++ b/2/take5/src/dealer/standard_dealer.rs
+@@ -1,5 +1,6 @@
+ use rand::{self, Rng};
+ use card::Card;
++use state::TURNS;
+ use player::Player;
+ use dealer::Dealer;
+ 
+@@ -20,7 +21,7 @@ impl Dealer for StandardDealer {
+     }
+ 
+     fn deals(&mut self, players: &mut [Box<Player>]) {
+-        for _ in 0..10 {
++        for _ in 0..TURNS {
+             for player in players.iter_mut() {
+                 player.draw(self.deal());
+             }
+diff --git a/2/take5/src/game.rs b/2/take5/src/game.rs
+index 1c111fa..7ad548c 100644
+--- a/2/take5/src/game.rs
++++ b/2/take5/src/game.rs
+@@ -3,6 +3,9 @@ use board::Board;
+ use dealer::Dealer;
+ use player::Player;
+ 
++/// Number of turns for a round.
++pub const TURNS: usize = 9;
++
+ /// Running of the game of take5.
+ pub struct Game {
+     pub board: Board,
+@@ -30,7 +33,7 @@ impl Game {
+             self.dealer.flip(&mut self.board);
+ 
+             // The turns.
+-            for _ in 0..10 {
++            for _ in 0..TURNS {
+                 let mut played = Vec::new();
+                 for player in self.players.iter_mut() {
+                     player.look_at_board(&mut self.board);
+diff --git a/2/take5/src/lib.rs b/2/take5/src/lib.rs
+index 9009a4a..5625b68 100644
+--- a/2/take5/src/lib.rs
++++ b/2/take5/src/lib.rs
+@@ -42,7 +42,7 @@
+ extern crate rand;
+ extern crate itertools;
+ 
+-pub use state::Game;
++pub use state::{TURNS, Game};
+ pub use card::Card;
+ pub use dealer::Dealer;
+ pub use board::{Board, StackId};
+diff --git a/3/take5_ext/src/custom_dealer.rs b/3/take5_ext/src/custom_dealer.rs
+index b38002b..1878a0f 100644
+--- a/3/take5_ext/src/custom_dealer.rs
++++ b/3/take5_ext/src/custom_dealer.rs
+@@ -2,7 +2,7 @@ use std::fs::File;
+ use std::io::{Read, BufRead};
+ use std::path::Path;
+ use rand::{self, Rng};
+-use take5::{Card, Player, Dealer};
++use take5::{TURNS, Card, Player, Dealer};
+ 
+ /// A dealer who reads bull values from a configuration file.
+ #[derive(Debug, Default)]
+@@ -49,7 +49,7 @@ impl Dealer for CustomDealer {
+     }
+ 
+     fn deals(&mut self, players: &mut [Box<Player>]) {
+-        for _ in 0..10 {
++        for _ in 0..TURNS {
+             for player in players.iter_mut() {
+                 player.draw(self.deal());
+             }

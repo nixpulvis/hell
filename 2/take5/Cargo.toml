@@ -1,0 +1,14 @@
+[package]
+name = "take5"
+version = "0.2.0"
+authors = [
+    "Nathan Lilienthal <nathan@nixpulvis.com>",
+    "Alex Jo <jo.al@husky.neu.edu>",
+]
+
+[dependencies]
+itertools = "0.4"
+rand = "0.3"
+rustc-serialize = "0.3"
+serde = "*"
+serde_macros = "*"

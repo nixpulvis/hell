@@ -1,0 +1,26 @@
+[root]
+name = "xstream"
+version = "0.1.0"
+dependencies = [
+ "serde_json 0.7.0 (git+https://github.com/nixpulvis/json?branch=hacks)",
+]
+
+[[package]]
+name = "num"
+version = "0.1.31"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "serde"
+version = "0.7.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "serde_json"
+version = "0.7.0"
+source = "git+https://github.com/nixpulvis/json?branch=hacks#897b2240cc47148ec71a42c152704df4ab401356"
+dependencies = [
+ "num 0.1.31 (registry+https://github.com/rust-lang/crates.io-index)",
+ "serde 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+

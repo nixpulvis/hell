@@ -1,0 +1,4 @@
+#!/bin/bash
+cd attack/client
+../../../cargo build 2&>/dev/null
+target/debug/xattack

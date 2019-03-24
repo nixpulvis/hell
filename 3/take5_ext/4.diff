@@ -1,0 +1,26 @@
+diff --git a/2/take5/src/card.rs b/2/take5/src/card.rs
+index 1b53e47..20c9087 100644
+--- a/2/take5/src/card.rs
++++ b/2/take5/src/card.rs
+@@ -50,7 +50,7 @@ impl Card {
+         (1..211)
+             .map(|i| {
+                 let bull = f(i);
+-                if bull < 2 || bull > 7 {
++                if bull < 3 || bull > 7 {
+                     panic!("Bull values must be between 2 and 7 inclusive.");
+                 }
+                 Card(i, bull)
+diff --git a/2/take5/src/dealer/standard_dealer.rs b/2/take5/src/dealer/standard_dealer.rs
+index a4a0dac..e31d0e5 100644
+--- a/2/take5/src/dealer/standard_dealer.rs
++++ b/2/take5/src/dealer/standard_dealer.rs
+@@ -12,7 +12,7 @@ pub struct StandardDealer {
+ 
+ impl Dealer for StandardDealer {
+     fn open(&mut self) {
+-        self.deck = Card::deck(|_| 2);
++        self.deck = Card::deck(|_| 3);
+         rand::thread_rng().shuffle(&mut self.deck)
+     }
+ 

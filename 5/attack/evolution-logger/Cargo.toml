@@ -1,0 +1,7 @@
+[package]
+name = "evolution-logger"
+version = "0.1.0"
+authors = ["Nathan Lilienthal <nathan@nixpulvis.com>"]
+
+[dependencies]
+log = "0.3"

@@ -1,0 +1,13 @@
+[package]
+name = "take5-ext"
+version = "0.2.0"
+authors = [
+    "Nathan Lilienthal <nathan@nixpulvis.com>",
+    "Alex Jo <jo.al@husky.neu.edu>",
+]
+
+[dependencies]
+rand = "0.3"
+
+[dependencies.take5]
+path = "../"

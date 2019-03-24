@@ -1,0 +1,82 @@
+All messages are sent over TCP and assume a that the connections persist.
+`main n` starts and then waits until `n` players have connected. All future
+messages from unregistered players are dropped. Players internally store
+the needed connection informations (i.e. `SocketAddr`).
+
+Start Up:
+
++----+
+|main|
++----+     join message (empty body)           +---------+
+     +<----------------------------------------+e player1|
+     |                                         +---------+
+     |     join message (empty body)           +---------+
+     +<----------------------------------------+e player2|
+     |                                         +---------+
+     |  +---------+                            more players...
+     +--+i player1|
+     |  +---------+
+     |  +---------+
+     +--+i player2+------+
+     |  +---------+      |
+     |  more players...  |
+     |                   |
+     |  +----+           |
+     +--+game<-----------+
+     |  +----+   moves ownership
+     |
+     |  maybe a response message?
+     |------------------------------------------>
+     +
+
+Step 1:
+
++-------------+
+|game         |
+| +---------+ |  start message (s)     +---------+
+| |i player1+-------------------------->e player1|
+| +---------+ |                        +---------+
+| +---------+ |  start message (s)     +---------+
+| |i player2+-------------------------->e player2|
+| +---------+ |                        +---------+
++-------------+
+
+ s ~ `Player.to_wire.to_string`
+
+Step 2, 3:
+
++-------------+
+|game         |
+| +---------+ |   action message (o)   +---------+
+| |i player1+-------------------------->e player1|
+| |         <--------------------------+         |
+| +---------+ |          (c)           +---------+
+|             |
+|             |
+| +---------+ |   action message (o)   +---------+
+| |i player2+-------------------------->e player2|
+| |         <--------------------------+         |
+| +---------+ |          (c)           +---------+
++-------------+
+
+ o ~ `FeedObservation.to_wire.to_string`
+ c ~ `FeedChoice.to_wire.to_string`
+
+Step 4:
+
++-------------+
+|game         |
+| +---------+ |   feed message (o)     +---------+
+| |i player1+-------------------------->e player1|
+| |         <--------------------------+         |
+| +---------+ |          (c)           +---------+
+|             |
+|             |
+| +---------+ |   feed message (o)     +---------+
+| |i player2+-------------------------->e player2|
+| |         <--------------------------+         |
+| +---------+ |          (c)           +---------+
++-------------+
+
+ o ~ `FeedObservation.to_wire.to_string`
+ c ~ `FeedChoice.to_wire.to_string`

@@ -1,0 +1,18 @@
+[package]
+name = "take5-remote"
+version = "0.1.0"
+authors = [
+    "Nathan Lilienthal <nathan@nixpulvis.com>",
+    "Alex Jo <jo.al@husky.neu.edu>",
+]
+
+[dependencies]
+serde = "*"
+serde_json = { version = "*", git = "https://github.com/nixpulvis/json", branch = "negative-zero" }
+serde_macros = "*"
+
+[dependencies.take5]
+path = "../"
+
+[dependencies.take5-ext]
+path = "../take5-ext"

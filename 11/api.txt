@@ -1,0 +1,99 @@
+// For best viewing set your editor to Rust/C mode.
+
+// Marker trait for choices.
+trait Choice { }
+
+// Represents "choosing" a descision.
+trait Choose<C: Choice> {
+    fn choose(&self) -> Option<C>;
+}
+
+// Client choice implementations.
+impl Choose<FeedChoice> for &'a ObservedGame { ... }
+impl Choose<ActionChoice> for &'a ObservedGame { ... }
+
+// Server choice implementations, for the current player.
+impl Choose<FeedChoice> for TcpChoose<C> { ... }
+impl Choose<ActionChoice> for TcpChoose<C> { ... }
+
+// Represents all the `Choice` options.
+trait Choices<C: Choice> {
+    // All possible choices of type C.
+    fn choices(&self) -> Vec<C>;
+}
+
+impl<'a> Choices<FeedChoice> for &'a Game { ... }
+impl<'a> Choices<ActionChoice> for &'a Game { ... }
+
+// Represents choosing a descision automatically. This trait will be
+// automatically implemented for both types of choice since we'll
+// have `Choose` and `Choices` implemented for them.
+trait ChooseAutomatically<C: Choice>: Choose<C> + Choices<C> {
+    // Automatically decide if there is only one `Choice` to be made.
+    fn choose_automatically(&self) -> Option<C> { ... }
+}
+
+// Represents applying a `Choice`.
+trait Apply<C: Choice> {
+    fn apply(&mut self, C);
+}
+
+impl<'a> Apply<FeedChoice> for &'a mut Game { ... }
+impl<'a> Apply<ActionChoice> for &'a mut Game { ... }
+
+// server <- client1 <connect>
+// server <- client2 <connect>
+// server <- client3 <connect>
+// server -> client1 <start: Id>
+// server -> client2 <start: Id>
+// server -> client3 <start: Id>
+// ...
+// server -> client1 <action: ObservedGame>
+// server <- client1 <action: ActionChoice>
+// ...
+// server -> client1 <feed: ObservedGame>
+// server <- client1 <feed: FeedChoice>
+// ...
+// server -> client1 <end: ...>
+// server -> client2 <end: ...>
+// server -> client3 <end: ...>
+
+// The game can be modeled as a machine operating on states that
+// implement `Apply`.
+
+
+// The game can register connections for `TcpChoose` with an interface
+// something like the following:
+
+let mut choosers = Choosers::new();
+for (id, connection) in connections.iter().enumerate() {
+    choosers.add(id + 1, TcpChoose::new(connection));
+}
+
+// The main idea here is that we have a `TcpChoose` object which knows how to
+// send game observations and receive choices. On the client side we'll have the
+// oposite, an object which receives the game state and calls choose with it.
+
+// As for the state machine. This has been one of the hardest parts thinking about
+// this project so far. We have a pretty cool idea for a machine that operates on states.
+
+let round = Node::new(Deal(game)).times(p)
+                 .then(Action(game, choose)).times(p)
+                 .then(Reveal(game))
+                 .then(Feed(game, choose)).until(|g| !g.can_eat())
+                 .then(Bag(game))
+let game = Node::new(round)
+                .until(|g| !g.can_deal())
+
+// Something like this might work, we are currently using a little unsafe code to deal
+// with mutation in loops. We're both still learning design patterns in Rust and this
+// has been an interesting experiance for us indeed.
+//
+// That said it's becoming clear that an object graph is really needed for this project.
+// We added a notion of a `Context` for wrapping a mutable game with some other data
+// like indices into the game, for a super hacky object graph like interface. The main
+// thing we need is back edges so that objects can ask thier parents for things.
+// `attack` was esspecially interesting because it effects two species at once.
+// All of these things are hard to prove with Rust's type system are safe to do.
+// Using a type like `Rc<RefCell<...>>` we could have a runtime mutation check, without
+// all the challenges getting the borrow checker.

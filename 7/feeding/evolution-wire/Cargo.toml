@@ -1,0 +1,15 @@
+[package]
+name = "evolution-wire"
+version = "0.1.0"
+authors = [
+    "Nathan Lilienthal <nathan@nixpulvis.com>",
+    "Steve Troetti <workstroetti@gmail.com>"
+]
+
+[dependencies]
+log = "0.3"
+serde = { git = "https://github.com/nixpulvis/serde.git" }
+serde_json = { git = "https://github.com/nixpulvis/json.git" }
+
+[dev-dependencies]
+itertools = "0.4"

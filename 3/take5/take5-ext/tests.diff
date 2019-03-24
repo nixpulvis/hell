@@ -1,0 +1,255 @@
+diff --git a/2/take5/src/board.rs b/2/take5/src/board.rs
+index b5c2e76..d08238b 100644
+--- a/2/take5/src/board.rs
++++ b/2/take5/src/board.rs
+@@ -25,7 +25,7 @@ impl StackId {
+     /// ```
+     /// use take5::{Card, Board, StackId};
+     ///
+-    /// let mut deck = Card::deck(|_| 2);
++    /// let mut deck = Card::deck(|_| 3);
+     ///
+     /// // Setup a board.
+     /// let mut board = Board::default();
+@@ -54,7 +54,7 @@ impl StackId {
+ /// ```
+ /// use take5::{Board, Card};
+ ///
+-/// let mut deck = Card::deck(|_| 2);
++/// let mut deck = Card::deck(|_| 3);
+ /// let mut board = Board::default();
+ ///
+ /// // Push two cards onto each stack.
+@@ -81,7 +81,7 @@ impl Board {
+     /// ```
+     /// use take5::{Card, Board, StackId};
+     ///
+-    /// let mut deck = Card::deck(|_| 2);
++    /// let mut deck = Card::deck(|_| 3);
+     ///
+     /// // Setup a board,
+     /// // A: [f2b2]
+@@ -122,7 +122,7 @@ impl Board {
+     /// ```
+     /// use take5::{Card, Board, StackId};
+     ///
+-    /// let mut deck = Card::deck(|_| 2);
++    /// let mut deck = Card::deck(|_| 3);
+     ///
+     /// // Setup a board.
+     /// let mut board = Board::default();
+diff --git a/2/take5/src/card.rs b/2/take5/src/card.rs
+index 20c9087..1901340 100644
+--- a/2/take5/src/card.rs
++++ b/2/take5/src/card.rs
+@@ -16,7 +16,7 @@ use std::fmt;
+ /// ```
+ /// use take5::Card;
+ ///
+-/// let deck = Card::deck(|_| 2);
++/// let deck = Card::deck(|_| 3);
+ /// println!("{:?}", deck[10]);
+ /// //=> f11b5
+ /// ```
+@@ -39,9 +39,9 @@ impl Card {
+     ///
+     /// // A deck who's bull values are 2 for the lower half the deck and
+     /// // three for the higher half.
+-    /// let deck = Card::deck(|face| if face < 52 { 2 } else { 3 });
+-    /// assert_eq!(deck.len(), 104);
+-    /// assert_eq!(deck[30].bull(), 2);
++    /// let deck = Card::deck(|face| if face < 52 { 4 } else { 3 });
++    /// assert_eq!(deck.len(), 210);
++    /// assert_eq!(deck[30].bull(), 4);
+     /// assert_eq!(deck[70].bull(), 3);
+     /// ```
+     pub fn deck<F>(f: F) -> Vec<Card>
+@@ -65,7 +65,7 @@ impl Card {
+     /// ```
+     /// use take5::Card;
+     ///
+-    /// let deck = Card::deck(|_| 2);
++    /// let deck = Card::deck(|_| 3);
+     /// assert_eq!(deck[0].face(), 1);
+     /// ```
+     pub fn face(&self) -> u8 {
+@@ -79,9 +79,9 @@ impl Card {
+     /// ```
+     /// use take5::Card;
+     ///
+-    /// let deck = Card::deck(|_| 2);
++    /// let deck = Card::deck(|_| 3);
+     /// assert_eq!(deck[54].face(), 55);
+-    /// assert_eq!(deck[54].bull(), 2);
++    /// assert_eq!(deck[54].bull(), 3);
+     /// ```
+     pub fn bull(&self) -> u8 {
+         self.1
+diff --git a/2/take5/src/dealer/mod.rs b/2/take5/src/dealer/mod.rs
+index 12af09f..ad2f117 100644
+--- a/2/take5/src/dealer/mod.rs
++++ b/2/take5/src/dealer/mod.rs
+@@ -32,7 +32,7 @@ pub trait Dealer {
+     /// let mut dealer = StandardDealer::default();
+     /// dealer.open();
+     /// let card = dealer.deal();
+-    /// assert!(1 <= card.face() && card.face() <= 104);
++    /// assert!(1 <= card.face() && card.face() <= 210);
+     /// ```
+     fn deal(&mut self) -> Card;
+ 
+@@ -56,7 +56,7 @@ pub trait Dealer {
+     /// dealer.open();
+     /// dealer.deals(&mut players);
+     /// for player in players.iter() {
+-    ///     assert_eq!(player.hand().len(), 10);
++    ///     assert_eq!(player.hand().len(), 9);
+     /// }
+     /// ```
+     fn deals(&mut self, players: &mut [Box<Player>]);
+diff --git a/2/take5/src/player/mod.rs b/2/take5/src/player/mod.rs
+index 2cabda0..7f13b83 100644
+--- a/2/take5/src/player/mod.rs
++++ b/2/take5/src/player/mod.rs
+@@ -34,7 +34,7 @@ pub trait Player: fmt::Display {
+     /// use take5::{Card, Player};
+     /// use take5::player::AiPlayer;
+     ///
+-    /// let mut deck = Card::deck(|_| 2);
++    /// let mut deck = Card::deck(|_| 3);
+     /// let mut ai = AiPlayer::new(1);
+     ///
+     /// // Starts without any cards in it's hand.
+@@ -55,7 +55,7 @@ pub trait Player: fmt::Display {
+     /// use take5::{Card, Player};
+     /// use take5::player::AiPlayer;
+     ///
+-    /// let mut deck = Card::deck(|_| 2);
++    /// let mut deck = Card::deck(|_| 3);
+     /// let mut ai = AiPlayer::new(1);
+     ///
+     /// // Starts without any cards in it's pile.
+@@ -76,7 +76,7 @@ pub trait Player: fmt::Display {
+     /// use take5::{Card, Player};
+     /// use take5::player::AiPlayer;
+     ///
+-    /// let mut deck = Card::deck(|_| 2);
++    /// let mut deck = Card::deck(|_| 3);
+     /// let mut ai = AiPlayer::new(1);
+     ///
+     /// // Draw 10 cards.
+@@ -95,7 +95,7 @@ pub trait Player: fmt::Display {
+     /// use take5::{Card, Board, Player, StackId};
+     /// use take5::player::AiPlayer;
+     ///
+-    /// let mut deck = Card::deck(|_| 2);
++    /// let mut deck = Card::deck(|_| 3);
+     /// let mut ai = AiPlayer::new(1);
+     ///
+     /// // Setup a game.
+@@ -119,7 +119,7 @@ pub trait Player: fmt::Display {
+     /// use take5::{Card, Board, Player, StackId};
+     /// use take5::player::AiPlayer;
+     ///
+-    /// let mut deck = Card::deck(|_| 2);
++    /// let mut deck = Card::deck(|_| 3);
+     /// let mut ai = AiPlayer::new(1);
+     ///
+     /// // Setup a game.
+@@ -143,7 +143,7 @@ pub trait Player: fmt::Display {
+     /// use take5::{Card, Board, Player, StackId};
+     /// use take5::player::AiPlayer;
+     ///
+-    /// let mut deck = Card::deck(|_| 2);
++    /// let mut deck = Card::deck(|_| 3);
+     /// let mut ai = AiPlayer::new(1);
+     ///
+     /// // Setup a game.
+@@ -176,7 +176,7 @@ pub trait Player: fmt::Display {
+     /// use take5::{Card, Board, Player, StackId};
+     /// use take5::player::AiPlayer;
+     ///
+-    /// let mut deck = Card::deck(|_| 2);
++    /// let mut deck = Card::deck(|_| 3);
+     /// let mut ai = AiPlayer::new(1);
+     ///
+     /// // Draw a card.
+@@ -204,7 +204,7 @@ pub trait Player: fmt::Display {
+     /// use take5::{Card, Board, Player, StackId};
+     /// use take5::player::AiPlayer;
+     ///
+-    /// let mut deck = Card::deck(|_| 2);
++    /// let mut deck = Card::deck(|_| 3);
+     /// let mut ai = AiPlayer::new(1);
+     ///
+     /// // Setup a board.
+@@ -226,7 +226,7 @@ pub trait Player: fmt::Display {
+     /// use take5::{Card, Player};
+     /// use take5::player::AiPlayer;
+     ///
+-    /// let mut deck = Card::deck(|_| 2);
++    /// let mut deck = Card::deck(|_| 3);
+     /// let mut ai = AiPlayer::new(1);
+     ///
+     /// // Takes five cards.
+@@ -247,14 +247,13 @@ pub trait Player: fmt::Display {
+     /// use take5::{Card, Player};
+     /// use take5::player::AiPlayer;
+     ///
+-    /// let mut deck = Card::deck(|_| 2);
++    /// let mut deck = Card::deck(|_| 3);
+     /// let mut ai = AiPlayer::new(1);
+     ///
+     /// // Takes five cards.
+     /// deck.split_off(5);
+     /// ai.take(deck);
+-    /// // Player took: f1b2, f2b2, f3b2, f4b2, f5b2
+-    /// assert_eq!(ai.score(), 10);
++    /// assert_eq!(ai.score(), 15);
+     /// ```
+     fn score(&self) -> u32 {
+         self.pile().iter().fold(0, |s, c| s + c.bull() as u32)
+diff --git a/2/take5/src/stack.rs b/2/take5/src/stack.rs
+index 3a0c4d3..f71b3e5 100644
+--- a/2/take5/src/stack.rs
++++ b/2/take5/src/stack.rs
+@@ -17,10 +17,10 @@ impl Stack {
+     /// ```
+     /// use take5::{Card, Stack};
+     ///
+-    /// let mut deck = Card::deck(|_| 2);
++    /// let mut deck = Card::deck(|_| 3);
+     /// let mut stack = Stack::default();
+     /// assert!(!stack.full());
+-    /// for _ in 0..5 {
++    /// for _ in 0..6 {
+     ///     stack.push(deck.pop().unwrap());
+     /// }
+     /// assert!(stack.full());
+@@ -36,7 +36,7 @@ impl Stack {
+     /// ```
+     /// use take5::{Card, Stack};
+     ///
+-    /// let mut deck = Card::deck(|_| 2);
++    /// let mut deck = Card::deck(|_| 3);
+     /// let mut stack = Stack::default();
+     /// for _ in 0..5 {
+     ///     stack.push(deck.pop().unwrap());
+@@ -58,7 +58,7 @@ impl Stack {
+     /// ```
+     /// use take5::{Card, Stack};
+     ///
+-    /// let mut deck = Card::deck(|_| 2);
++    /// let mut deck = Card::deck(|_| 3);
+     /// let mut stack = Stack::default();
+     /// for _ in 0..5 {
+     ///     stack.push(deck.pop().unwrap());
+@@ -80,7 +80,7 @@ impl Stack {
+     /// ```
+     /// use take5::{Card, Stack};
+     ///
+-    /// let mut deck = Card::deck(|_| 2);
++    /// let mut deck = Card::deck(|_| 3);
+     /// let mut stack = Stack::default();
+     /// for _ in 0..5 {
+     ///     stack.push(deck.pop().unwrap());

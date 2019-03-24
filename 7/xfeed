@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e
+
+cd feeding/evolution-client
+exec target/debug/xfeed

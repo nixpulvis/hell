@@ -1,0 +1,14 @@
+[package]
+name = "evolution-test"
+version = "0.1.0"
+authors = ["Nathan Lilienthal <nathan@nixpulvis.com>"]
+
+[lib]
+name = "evolution_test"
+crate-type = ["dylib"]
+plugin = true
+
+[dependencies]
+itertools = "0.4"
+serde = { git = "https://github.com/nixpulvis/serde.git" }
+serde_json = { git = "https://github.com/nixpulvis/json.git" }

@@ -1,0 +1,54 @@
+[
+	[
+		["id", 1],
+		["species", [
+			[
+				["food", 7],
+				["body", 5],
+				["population", 7],
+				["traits", ["climbing", "fat-tissue"]],
+				["fat-food", 5]
+			],
+			[
+				["food", 6],
+				["body", 4],
+				["population", 6],
+				["traits", ["fat-tissue"]],
+				["fat-food", 4]
+			],
+			[
+				["food", 5],
+				["body", 5],
+				["population", 5],
+				["traits", ["fertile"]]
+			]
+		]],
+		["bag", 10]
+	],
+	19, [
+		[
+			["id", 2],
+			["species", [
+				[
+					["food", 0],
+					["body", 5],
+					["population", 5],
+					["traits", ["carnivore", "climbing"]]
+				]
+			]],
+			["bag", 10]
+		],
+		[
+			["id", 3],
+			["species", [
+				[
+					["food", 0],
+					["body", 5],
+					["population", 5],
+					["traits", ["climbing"]]
+				]
+			]],
+			["bag", 10]
+		]
+	]
+]

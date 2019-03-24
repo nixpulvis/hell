@@ -1,0 +1,192 @@
+Notation
+========
+
+- Nonterminals are all caps.
+- Configurations are assumed to be the correct type for the place they appear, and are derived from the corresponding function on `Configuration` for example stack_size() is the configured size of the stacks for this game.
+- Server arguments are of the form server.<name>. For example server.arg_players is the number of players that must connect before the game starts.
+- Arrays are [T; e] where T is a terminal or nonterminal, and e is a length expression. For example [int; < 4 || > 8].
+- All other valid JSON is allowed.
+- {"a": T, "b": S, ...}.keys = "a" | "b" | ...
+
+Data Definitions
+================
+
+ID = number
+
+CARD = {
+	"face": number,
+	"bull": number
+}
+
+STACK_ID = BOARD.keys
+
+STACK = [CARD; <= stack_size()]
+
+BOARD = {
+	"A": STACK,
+	"B": STACK,
+	"C": STACK,
+	"D": STACK
+}
+
+PLAYED = [{"id": ID, "card": CARD}; server.arg_players]
+
+TAKEN = {
+	"id": ID,
+	"stack": STACK
+}
+
+MESSAGE = REGISTER_REQUEST_MSG,
+	    | REGISTER_RESPONSE_MSG,
+	    | DEAL_MSG,
+	    | BOARD_MSG,
+	    | PLAY_MSG,
+	    | PLAYED_MSG,
+	    | CHOOSE_MSG,
+	    | CHOICE_MSG,
+	    | TAKEN_MSG,
+		| GAME_OVER_MSG
+
+
+
+REGISTER_REQUEST_MSG = {
+	"type": "register_request",
+	"data": null
+}
+
+REGISTER_RESPONSE_MSG = {
+	"type": "register_response",
+	"data": {
+		"id": ID,
+		"player_count": server.arg_players,
+		"confg": {
+			"turn_count": number,
+			"stack_size": number,
+			"win_score": number,
+			"deck_size": number,
+			"bull_range": [number, number]
+		}
+	}
+}
+
+DEAL_MSG = {
+	"type": "deal",
+	"data": [CARD; turn_count()]
+}
+
+PLAY_REQUEST_MSG = {
+	"type": "play_request",
+	"data": BOARD
+}
+
+PLAY_RESPONSE_MSG = {
+	"type": "play_response",
+	"data": CARD
+}
+
+PLAYED_MSG = {
+	"type": "played",
+	"data": PLAYED
+}
+
+CHOOSE_REQUEST_MSG = {
+	"type": "choose_request",
+	"data": BOARD
+}
+
+CHOOSE_RESPONSE_MSG = {
+	"type": "choose_response",
+	"data": STACK_ID
+}
+
+TAKEN_MSG = {
+	"type": "taken",
+	"data": TAKEN
+}
+
+GAME_OVER_MSG = {
+	"type": "game_over"
+	"data": [{"player": ID, "score": number}; server.arg_players]
+}
+
+ASCII Art
+=========
+
++------+  +-------+ +-------+
+|server|  |client1| |client2|
++------+  +-------+ +-------+ ...
+|         |         |
+<--REGREQ-+         |
+<--REGREQ-+---------+
+|         |         |
++--REGRES->         |
++--REGRES-+--------->
+|         |         |
++--DEAL--->         |          > Start round loop.
++--DEAL------------->
+|         |         |
++--PLYREQ->         |          > Start turn loop.
++--PLYREQ-+--------->
+|         |         |
+<--PLYRES-+         |
+<--PLYRES-+---------+
+|         |         |
++--PLYD--->         |
++--PLYD------------->
+|         |         |
++--TKN---->         |          > Maybe, if player plays card on full stack.
++--TKN-------------->          >
+|         |         |
++--CHSREQ----------->          > Maybe, if player plays card below all stacks,
+<--CHSRES-----------+          > forcing the player to choose.
+|         |         |          >
++--TKN---->         |          >
++--TKN-------------->          >
+|         |         |
++--GOVER-->         |          > End turn/round loop.
++--GOVER------------>
+|         |         |
++         +         +
+
+More English
+============
+
+First wait for `server.arg_players` REGISTER_REQUEST_MSG messages, then
+Send a REGISTER_RESPONSE_MSG to each player, then
+- While the game is not over (everyone is below `win_score()` and no ties),
+    Send a DEAL_MSG to each player, then
+    - `turn_count()` times,
+        Send a PLAY_REQUEST_MSG to each player.
+        Get a PLAY_RESPONSE_MSG from each player.
+        Send a PLAYED_MSG to each player
+        - for all of the played cards,
+            We *might*
+                Send a CHOOSE_REQUST_MSG to some player, then
+                Get CHOOSE_RESPONSE_MSG from the same player, then
+                Send a TAKEN_MSG to each player.
+            Or we *might*
+                Send a TAKEN_MSG to each player.
+Send a GAME_OVER_MSG to each player.
+
+Less English
+============
+
+<-) PLAYERS = [p_0, p_1, ... p_n] where n = server.arg_players from 1 REGISTER_REQUEST_MSG per p_i.
+->) for p in PLAYERS send 1 REGISTER_RESPONSE_MSG to p.
+while game_is_running
+    ->) for p in PLAYERS send 1 DEAL_MSG to p.
+    turn_count() times do
+        ->) for p in PLAYERS send 1 PLAY_REQUEST_MSG to p.
+        <-) PLAYED = [p_0, p_1, ..., p_n] where n = server.arg_players from 1 PLAY_RESPONSE_MSG per p_i.
+        ->) for p in PLAYERS send 1 PLAYED_MSG to p.
+
+        for p in PLAYED optionally do
+        	->) send 1 CHOOSE_REQUST_MSG to p's sender.
+        	<-) receive 1 CHOOSE_RESPONSE_MSG from p's owner.
+        	->) for p in PLAYERS send 1 TAKEN_MSG to p.
+        |
+        	->) for p in PLAYERS send 1 TAKEN_MSG to p.
+        end
+    end
+end
+->) for p in PLAYERS send 1 GAME_OVER_MSG

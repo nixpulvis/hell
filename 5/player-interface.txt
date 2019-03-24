@@ -1,0 +1,65 @@
+Rust docs for the Player:
+https://github.ccs.neu.edu/pages/cs4500sp16/cs4500-nathanl-stroetti/evolution/actor/trait.Player.html
+
+Included are the three most important concepts for the Player.
+For definitions of other data see docs above.
+
+/// The interface for a player playing the game.
+pub trait Player {
+    /// Called on the start of a game, given your id as a player.
+    fn new(id: PlayerIndex) -> Self;
+    /// Choose a trait card to play as food, given your hand for this round, as well as the order
+    /// the players play and eat.
+    fn start_round(&mut self, hand: Vec<Card>, game: Game) -> Card;
+    /// Play all trait cards you wish to, with the choice of how to use them,
+    /// given an obsevation of the game.
+    fn play_trait_cards(&mut self, game: Game) -> Vec<CardChoices>;
+    /// Given a state of the game, decide which of your species is going to eat.
+    fn eat(&mut self, game: Game) -> EatChoice;
+}
+
+/// A choice of how to use a trait card not as a food card.
+#[derive(Debug)]
+pub enum CardChoices {
+    /// Use a trait card to evolve a species to have the card's
+    /// trait.
+    Evolve {
+        target: SpeciesIndex,
+        used_cards: Vec<Card>,
+        removed_traits: Vec<Trait>
+    },
+    /// Request an increase of the population of the species at the
+    /// included index.
+    IncreasePopulation {
+        target: SpeciesIndex,
+        used_card: Card,
+    },
+    /// Request an increase of the body size of the species at the
+    /// included index.
+    IncreaseBodySize {
+        target: SpeciesIndex,
+        used_card: Card,
+    },
+    /// Requests a new species placed at the given index.
+    NewSpecies {
+        placement: SpeciesPlacement,
+        used_card: Card
+    },
+}
+
+//(PlayerIndex, SpeciesIndex)
+pub enum EatChoice {
+    Vegetarian {
+        /// Cannot be a carnivore, or full/extinct.
+        eater: SpeciesIndex
+    },
+    Carnivore {
+        /// Must be a valid player in the game.
+        target: PlayerIndex,
+        /// Must be a carnivore, and not full/extinct.
+        attacker: SpeciesIndex,
+        /// Must be a species vulnerable to attack by the attacker,
+        /// see `Species::can_attack`.
+        defender: SpeciesIndex,
+    },
+}

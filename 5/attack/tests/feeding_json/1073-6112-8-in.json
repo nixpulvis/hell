@@ -1,0 +1,41 @@
+[
+	[
+		["id", 1],
+		["species", [
+			[
+				["food", 1],
+				["body", 2],
+				["population", 3],
+				["traits", ["carnivore", "horns"]]
+			], 
+[
+				["food", 0],
+				["body", 2],
+				["population", 4],
+				["traits", ["ambush"]]
+			]
+		]
+], 
+		["bag", 1]
+	],
+	5, [
+		[
+			["id", 2],
+			["species", [
+				[
+					["food", 3],
+					["body", 2],
+					["population", 7],
+					["traits", ["climbing", "ambush"]]
+				], 
+[
+					["food", 3],
+					["body", 2],
+					["population", 3],
+					["traits", ["fertile", "carnivore"]]
+				]
+			]],
+			["bag", 6]
+		]
+	]
+]

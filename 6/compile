@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+
+cd feeding
+../cargo build
+cd evolution-client
+../../cargo build

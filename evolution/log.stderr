@@ -1,0 +1,12 @@
+thread '<main>' panicked at 'called `Result::unwrap()` on an `Err` value: Error { repr: Os { code: 98, message: "Address already in use" } }', ../src/libcore/result.rs:746
+note: Run with `RUST_BACKTRACE=1` for a backtrace.
+Process didn't exit successfully: `target/debug/server 3` (exit code: 101)
+thread 'thread '<main><main>' panicked at '' panicked at 'failed to recv: Error { repr: Custom(Custom { kind: Other, error: Syntax("EOF while parsing a value", 1, 0) }) }failed to recv: Error { repr: Custom(Custom { kind: Other, error: Syntax("EOF while parsing a value", 1, 0) }) }', ', ../src/libcore/result.rs../src/libcore/result.rs::746thread '746
+<main>
+note: Run with `RUST_BACKTRACE=1` for a backtrace.
+' panicked at 'note: Run with `RUST_BACKTRACE=1` for a backtrace.
+failed to recv: Error { repr: Custom(Custom { kind: Other, error: Syntax("EOF while parsing a value", 1, 0) }) }', ../src/libcore/result.rs:746
+note: Run with `RUST_BACKTRACE=1` for a backtrace.
+Process didn't exit successfully: `target/debug/client a` (exit code: 101)
+Process didn't exit successfully: `target/debug/client c` (exit code: 101)
+Process didn't exit successfully: `target/debug/client b` (exit code: 101)

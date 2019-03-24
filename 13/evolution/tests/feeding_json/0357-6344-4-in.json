@@ -1,0 +1,34 @@
+[
+  [["id",1],
+  ["species",[
+    [["food",2],
+     ["body",2],
+     ["population",2],
+     ["traits",["carnivore"]]],
+    [["food",1],
+     ["body",2],
+     ["population",2],
+     ["traits",[]]],
+    [["food",2],
+     ["body",2],
+     ["population",2],
+     ["traits",["fat-tissue"]],
+      ["fat-food", 0]
+    ]
+  ]],
+  ["bag",3]],
+  2,
+  [
+    [["id",2],
+     ["species",[]],
+     ["bag",0]],
+    [["id",3],
+     ["species",[[["food",2],
+     ["body",2],
+     ["population",2],
+     ["traits",["fat-tissue"]],
+      ["fat-food", 0]
+    ]]],
+     ["bag",0]]
+  ]
+]

@@ -1,0 +1,49 @@
+[
+	[
+		["id", 1],
+		["species", [
+			[
+				["food", 2],
+				["body", 2],
+				["population", 5],
+				["traits", ["fat-tissue", "horns"]],
+				["fat-food", 0]
+			], 
+[
+				["food", 2],
+				["body", 5],
+				["population", 2],
+				["traits", ["ambush", "fat-tissue", "warning-call"]],
+				["fat-food", 0]
+			], 
+[
+				["food", 0],
+				["body", 2],
+				["population", 4],
+				["traits", ["carnivore"]]
+			]
+		]
+], 
+		["bag", 3]
+	],
+	3, [
+		[
+			["id", 2],
+			["species", [
+				[
+					["food", 0],
+					["body", 2],
+					["population", 3],
+					["traits", ["warning-call", "horns"]]
+				],
+				[
+					["food", 4],
+					["body", 2],
+					["population", 4],
+					["traits", ["carnivore"]]
+				]
+			]],
+			["bag", 3]
+		]
+	]
+]

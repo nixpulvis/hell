@@ -1,0 +1,17 @@
+[
+  [
+    ["id",1],
+    ["species",[
+      [
+        ["food",3],
+        ["body",3],
+        ["population",3],
+        ["traits",["fat-tissue"]],
+        ["fat-food", 0]
+      ]
+    ]],
+    ["bag",0]
+  ],
+  1,
+  []
+]
