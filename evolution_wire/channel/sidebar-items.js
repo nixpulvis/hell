@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Channel","Sending and receiving whole wire messages."]]});

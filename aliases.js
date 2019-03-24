@@ -1,0 +1,15 @@
+var ALIASES = {};
+ALIASES["cs4500"] = {};
+ALIASES["evolution"] = {};
+ALIASES["evolution_logger"] = {};
+ALIASES["evolution_wire"] = {};
+ALIASES["itertools"] = {};
+ALIASES["libc"] = {};
+ALIASES["log"] = {};
+ALIASES["num"] = {};
+ALIASES["num_integer"] = {};
+ALIASES["num_iter"] = {};
+ALIASES["num_traits"] = {};
+ALIASES["rand"] = {};
+ALIASES["serde"] = {};
+ALIASES["serde_json"] = {};

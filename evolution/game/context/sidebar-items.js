@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Board","A game aware board."],["Player","A game aware player."],["Situation","An attack within a game."],["Species","A game aware species."]],"trait":[["Context","Objects with mutable knowledge of the context they live in."]]});

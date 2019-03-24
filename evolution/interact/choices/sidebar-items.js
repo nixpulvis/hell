@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["Choices","The knowledge of all possible `Choice`s for the current player in the game."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ActionObservation",""],["BoardObservation","The observed view of a board, with just the food of a board."],["DealObservation",""],["FeedObservation",""],["PlayerObservation","The visable state of a player."]],"trait":[["Observation","An observation of some data."],["Observe","Asking some object for an observation of itself."]]});

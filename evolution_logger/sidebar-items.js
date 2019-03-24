@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Logger","A logger for our game."]]});

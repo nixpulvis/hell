@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["RankedFeedChoice","A ranked feed choice, where lower ranked choices are best."],["RankedSpecies","A ranked species, where lower ranked species are best."],["Silly",""]]});
